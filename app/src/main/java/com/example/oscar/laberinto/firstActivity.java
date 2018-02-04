@@ -19,17 +19,24 @@ public class firstActivity extends AppCompatActivity { //classe principal
     //mostrarem per pantalla a través d'aquest codi, no modificar.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
-
-        //posem la musica
         try {
             AssetFileDescriptor afd = getAssets().openFd("musica.mp3");
             mp = new MediaPlayer();
-            mp.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+            mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mp.prepare();
-            mp.start();
-        }catch (IOException e){
+
+        } catch (IOException e) {
             e.getMessage();
+        }
+        if(volum) {
+            setContentView(R.layout.activity_first);
+            //posem la musica
+            mp.start();
+
+        }else{
+            setContentView(R.layout.activity_canvi_pantalla_opcio);
+            //posem la musica
+            mp.stop();
         }
     }
         public void reciveIntent(){
@@ -42,7 +49,7 @@ public class firstActivity extends AppCompatActivity { //classe principal
             Intent canviPantallaOpcio = new Intent(this, canviPantallaOpcio.class);
             //activa o desactiva volum
 
-            this.volum = false;
+            volum = false;
             mp.stop();
 
 
