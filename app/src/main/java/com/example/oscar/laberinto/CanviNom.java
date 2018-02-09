@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 public class CanviNom extends AppCompatActivity {
     public static String nom = "Aquest nom es per defecte";
-    
+    int prova; //borrar
+
     public String getNom(){
-        return this.nom;
+        return nom;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class CanviNom extends AppCompatActivity {
     public void onClickButtonTree (View view){
 
         EditText editText = (EditText) findViewById(R.id.editText);
-        this.nom = editText.getText().toString();
+        nom = editText.getText().toString();
 
 
 
