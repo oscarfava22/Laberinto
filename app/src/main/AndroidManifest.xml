@@ -18,16 +18,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".CanviNom"
-            android:label="@string/title_activity_canvi_nom"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="landscape">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name=".canviPantallaOpcio"
-            android:label="@string/title_activity_canvi_pantalla_opcio"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="landscape">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
     </application>
+
 
 </manifest>
