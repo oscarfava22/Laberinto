@@ -76,4 +76,5 @@
     <string name="title_activity_canvi_nom">CanviNom</string>
     <string name="title_activity_canvi_pantalla_opcio">canviPantallaOpcio</string>
     <string name="title_activity_instruccions_joc">InstruccionsJoc</string>
+    <string name="title_activity_menu_inicial">menuInicial</string>
 </resources>
