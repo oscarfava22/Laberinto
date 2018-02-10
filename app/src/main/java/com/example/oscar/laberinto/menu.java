@@ -1,5 +1,6 @@
 package com.example.oscar.laberinto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,5 +17,14 @@ public class menu extends AppCompatActivity {
 
 
     }
+
+    public void onClickButtonInstructions(View view){
+
+        Intent itent = new Intent(this, instruccionsJoc.class);
+        startActivity(itent);
+
+        //anirem a una altre pestanya per canviar el nom
+    }
+
 
 }
