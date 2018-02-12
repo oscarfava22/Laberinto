@@ -1,33 +1,41 @@
 package com.example.oscar.laberinto;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.Log;
 
-import android.widget.TextView;
 
 public class instruccionsJoc extends AppCompatActivity {
 
-    private ViewPager mViewPager;
+    private static final String TAG = "instruccionsJoc";
+    private  SectionsPageAdapter mSectionsPageAdapter;
 
+    private  ViewPager mViewpager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instruccions_joc);
+        setContentView(R.layout.activity_menu_inicial);
+        Log.d(TAG, "onCreate: instructions");
+        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+        mViewpager = (ViewPager) findViewById(R.id.container);
+        setupViewPager(mViewpager);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewpager);
+
+    }
+    private void setupViewPager(ViewPager viewPager){
+        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ifragment1(),"Com jugar");
+        adapter.addFragment(new ifragment2(),"Moviments");
+        adapter.addFragment(new ifragment3(),"Puntuacions");
+        viewPager.setAdapter(adapter);
 
     }
 }
+
 
