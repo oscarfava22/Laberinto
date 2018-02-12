@@ -8,5 +8,7 @@ android:layout_height="match_parent"
 android:fitsSystemWindows="true"
 tools:context="com.example.oscar.laberinto.menu">
 
+    <include layout="@layout/content_menu_inicial" />
+
 
 </android.support.design.widget.CoordinatorLayout>

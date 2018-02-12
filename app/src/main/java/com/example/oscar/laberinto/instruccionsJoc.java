@@ -15,8 +15,10 @@ public class instruccionsJoc extends AppCompatActivity {
     private  SectionsPageAdapter mSectionsPageAdapter;
 
     private  ViewPager mViewpager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicial);
         Log.d(TAG, "onCreate: instructions");

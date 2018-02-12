@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 public class CanviNom extends AppCompatActivity {
     public static String nom = "Aquest nom es per defecte";
-    int prova; //borrar
 
     public String getNom(){
         return nom;
@@ -29,16 +28,5 @@ public class CanviNom extends AppCompatActivity {
 
         EditText editText = (EditText) findViewById(R.id.editText);
         nom = editText.getText().toString();
-
-
-
     }
-
-
-    public void reciveIntent(){
-        Intent intent = getIntent();
-    }
-
-
-
 }

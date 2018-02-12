@@ -10,20 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".firstActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity
-            android:name=".CanviNom"
-            android:screenOrientation="landscape"></activity>
-        <activity
-            android:name=".canviPantallaOpcio"
-            android:screenOrientation="landscape"></activity>
-        <activity
-            android:name=".menu"
-            android:label="@string/title_activity_menu_inicial"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
-
+            android:name=".configuracions"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,10 +20,26 @@
         </activity>
 
         <activity
+            android:name=".CanviNom"
+            android:screenOrientation="landscape">
+
+        </activity>
+
+        <activity
+            android:name=".menu"
+            android:label="@string/title_activity_menu_inicial"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+
+        </activity>
+
+        <activity
             android:name=".instruccionsJoc"
             android:label="@string/title_activity_instruccions_joc"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
 
     </application>
 

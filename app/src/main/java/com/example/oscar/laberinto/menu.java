@@ -20,8 +20,8 @@ public class menu extends AppCompatActivity {
 
     public void onClickButtonInstructions(View view){
 
-        Intent itent = new Intent(this, instruccionsJoc.class);
-        startActivity(itent);
+        Intent intent = new Intent(this, instruccionsJoc.class);
+        startActivity(intent);
 
         //anirem a una altre pestanya per canviar el nom
     }
