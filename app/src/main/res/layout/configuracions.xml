@@ -50,7 +50,7 @@
 
         <Button
             android:id="@+id/canviNom"
-            android:layout_width="569dp"
+            android:layout_width="568dp"
             android:layout_height="101dp"
             android:layout_marginBottom="124dp"
             android:layout_marginTop="8dp"
