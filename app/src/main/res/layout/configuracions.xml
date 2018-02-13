@@ -5,72 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+        android:background="@android:color/darker_gray"
+        android:visibility="visible"
+        tools:context=".configuracions">
 
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
+        <Button
+            android:id="@+id/buttonApagat"
+            android:layout_width="568dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="?attr/colorButtonNormal"
+            tools:drawableLeft="@android:drawable/ic_lock_silent_mode"
+            android:drawableTint="@android:color/background_dark"
+            android:onClick="onClickButtonApagat"
+            android:text="Prem per silenciar el volum"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="568dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="?android:attr/colorButtonNormal"
+            android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
+            android:drawableTint="@android:color/background_dark"
+            android:onClick="onClickButton"
+            android:text="Prem per silenciar el volum"
             android:visibility="visible"
-            tools:context=".configuracions">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
 
-            <Button
-                android:id="@+id/buttonApagat"
-                android:layout_width="568dp"
-                android:layout_height="96dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@android:color/darker_gray"
-                android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
-                android:drawableTint="@android:color/background_dark"
-                android:onClick="onClickButtonApagat"
-                android:text="Prem per silenciar el volum"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:drawableLeft="@android:drawable/ic_lock_silent_mode" />
+        <Button
+            android:id="@+id/canviNom"
+            android:layout_width="569dp"
+            android:layout_height="101dp"
+            android:layout_marginBottom="124dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?attr/colorButtonNormal"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
+            android:drawableTint="@android:color/background_dark"
+            android:onClick="onClickButtonTwo"
+            android:text="Canvia el nom d'usuari"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.15" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="568dp"
-                android:layout_height="96dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="?android:attr/colorButtonNormal"
-                android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
-                android:drawableTint="@android:color/background_dark"
-                android:onClick="onClickButton"
-                android:text="Prem per silenciar el volum"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="569dp"
-                android:layout_height="101dp"
-                android:layout_marginBottom="124dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="?attr/colorButtonNormal"
-                android:drawableLeft="@android:drawable/ic_menu_edit"
-                android:drawableTint="@android:color/background_dark"
-                android:onClick="onClickButtonTwo"
-                android:text="Canvia el nom d'usuari"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.521"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

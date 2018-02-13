@@ -9,24 +9,19 @@ import android.widget.TextView;
 
 
 public class CanviNom extends AppCompatActivity {
-    public static String nom = "Aquest nom es per defecte";
-
-    public String getNom(){
-        return nom;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_canvi_nom);
         TextView textView = (TextView ) findViewById(R.id.editText);
-        textView.setText(getNom());
+        textView.setText(menu.usuari.getNom());
 
     }
 
     public void onClickButtonTree (View view){
 
         EditText editText = (EditText) findViewById(R.id.editText);
-        nom = editText.getText().toString();
+        menu.usuari.setNom(editText.getText().toString());
     }
 }

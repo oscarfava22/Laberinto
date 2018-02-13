@@ -7,11 +7,30 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="369dp"
+        android:layout_height="match_parent"
         android:background="@android:color/background_light"
         tools:backgroundTint="@android:color/background_light"
         tools:context=".CanviNom"
         tools:layout_editor_absoluteY="3dp">
+
+        <Button
+            android:id="@+id/buttonJugar2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="@android:color/background_light"
+            android:drawableStart="@android:drawable/ic_media_play"
+            android:text="Ranking"
+            app:layout_constraintBottom_toTopOf="@+id/buttoConfiguracions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:drawableStart="@android:drawable/btn_star" />
 
         <TextView
             android:id="@+id/textView7"
@@ -25,91 +44,10 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.089"
+            app:layout_constraintHorizontal_bias="0.091"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.081" />
-
-        <ImageView
-            android:id="@+id/iconeJugar"
-            android:layout_width="49dp"
-            android:layout_height="43dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintHorizontal_bias="0.81"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.129"
-            app:srcCompat="@android:drawable/ic_media_play" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="244dp"
-            android:layout_marginTop="8dp"
-            android:text="Jugar"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.153" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="@string/title_activity_canvi_pantalla_opcio"
-            android:text="Configuracions"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.072"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.553" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Ranking"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.376"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.367" />
-
-        <ImageView
-            android:id="@+id/iconeRanking"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.158"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345"
-            app:srcCompat="@android:drawable/btn_star" />
+            app:layout_constraintVertical_bias="0.024" />
 
         <ImageButton
             android:id="@+id/helpButton"
@@ -118,76 +56,34 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="324dp"
+            android:backgroundTint="?attr/actionModeSplitBackground"
             android:src="@android:drawable/ic_menu_info_details"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintHorizontal_bias="0.112"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.903" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="204dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="@string/title_activity_canvi_pantalla_opcio"
-            android:src="@android:drawable/ic_menu_preferences"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.554"
-            tools:backgroundTint="@android:color/background_light" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/butoInstruccions"
-            android:layout_width="210dp"
-            android:layout_height="64dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:backgroundTint="@android:color/background_light"
             android:contentDescription="@string/title_activity_instruccions_de_joc"
+            android:drawableStart="@android:drawable/ic_menu_help"
             android:onClick="onClickButtonInstructions"
-            android:text="Button"
+            android:text="instruccions"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.757" />
-
-        <ImageView
-            android:id="@+id/iconeInstruccionsDeJoc"
-            android:layout_width="46dp"
-            android:layout_height="41dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/butoInstruccions"
-            app:layout_constraintEnd_toEndOf="@+id/butoInstruccions"
-            app:layout_constraintHorizontal_bias="0.878"
-            app:layout_constraintStart_toStartOf="@+id/butoInstruccions"
-            app:layout_constraintTop_toTopOf="@+id/butoInstruccions"
-            app:layout_constraintVertical_bias="0.571"
-            app:srcCompat="@android:drawable/ic_menu_help" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Instruccions de joc"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-            app:layout_constraintBottom_toBottomOf="@+id/butoInstruccions"
-            app:layout_constraintEnd_toStartOf="@+id/iconeInstruccionsDeJoc"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/butoInstruccions"
-            app:layout_constraintTop_toTopOf="@+id/butoInstruccions" />
+            app:layout_constraintTop_toBottomOf="@+id/buttoConfiguracions"
+            app:layout_constraintVertical_bias="0.0" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -195,7 +91,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="64dp"
-            android:layout_marginStart="304dp"
+            android:layout_marginStart="388dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -208,14 +104,17 @@
             android:layout_width="105dp"
             android:layout_height="41dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginLeft="208dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginStart="224dp"
             android:layout_marginTop="8dp"
             android:text="Rate this game"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.DropDownItem"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -223,18 +122,68 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
             android:text="Contacta amb nosaltres"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.018"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/usuari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="248dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Usuari"
+            android:textAppearance="@android:style/TextAppearance"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.895"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/helpButton"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.117" />
+
+        <Button
+            android:id="@+id/buttoConfiguracions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="216dp"
+            android:backgroundTint="@android:color/background_light"
+            android:drawableStart="@android:drawable/ic_menu_manage"
+            android:onClick="onClickButtonConfiguracions"
+            android:text="CONFIGURACIONS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonJugar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="@android:color/background_light"
+            android:drawableStart="@android:drawable/ic_media_play"
+            android:text="Jugar"
+            app:layout_constraintBottom_toTopOf="@+id/buttonJugar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 
