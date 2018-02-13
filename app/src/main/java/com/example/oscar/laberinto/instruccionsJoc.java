@@ -20,20 +20,22 @@ public class instruccionsJoc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_inicial);
+        setContentView(R.layout.activity_instruccions_joc);
         Log.d(TAG, "onCreate: instructions");
+
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
         mViewpager = (ViewPager) findViewById(R.id.container);
         setupViewPager(mViewpager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs); //error
         tabLayout.setupWithViewPager(mViewpager);
 
     }
+
     private void setupViewPager(ViewPager viewPager){
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ifragment1(),"Com jugar");
-        adapter.addFragment(new ifragment2(),"Moviments");
+        adapter.addFragment(new ifragment1(),"Moviments");
+        adapter.addFragment(new ifragment2(),"ComJugar");
         adapter.addFragment(new ifragment3(),"Puntuacions");
         viewPager.setAdapter(adapter);
 
