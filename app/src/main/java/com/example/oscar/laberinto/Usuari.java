@@ -1,10 +1,12 @@
 package com.example.oscar.laberinto;
 
+import android.support.annotation.NonNull;
+
 /**
  * Created by oscar on 13/02/2018.
  */
 
-public class Usuari {
+public class Usuari implements Comparable<Usuari>{
 
     private String nom;
     private int[] puntuacions; //nivells i estrellesNivell
@@ -37,7 +39,22 @@ public class Usuari {
      * @param nivell: nivell actual
      * @return: quantes estrelles te al nivell
      */
-    public int getPuntuacio(int nivell){
+    public Integer getPuntuacio(int nivell){
         return this.puntuacions[nivell];
+    }
+
+    public Integer getPuntuacioTotal(){
+        Integer puntuacio = 0;
+        for (int i = 0; i < Puntuacions.nivells; i++) {
+            puntuacio += puntuacions[i];
+        }
+        return puntuacio;
+    }
+
+    @Override
+    public int compareTo(@NonNull Usuari usuari) {
+        int comparingOne = this.getPuntuacioTotal();
+        int comparingTwo = usuari.getPuntuacioTotal();
+        return comparingTwo - comparingOne;
     }
 }

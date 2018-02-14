@@ -20,6 +20,10 @@ public class menu extends AppCompatActivity {
 
     }
 
+    public static void canviNomUsuari(String nom){
+        usuari.setNom(nom);
+    }
+
     public void onClickButtonInstructions(View view){
 
         Intent intent = new Intent(this, instruccionsJoc.class);
@@ -40,16 +44,15 @@ public class menu extends AppCompatActivity {
         Intent intent = new Intent(this, jugar.class);
         startActivity(intent);
 
-        //anirem a una altre pestanya per canviar el nom
     }
+      */
     public void onClickButtonRanking(View view){
 
-        Intent intent = new Intent(this, ranking.class);
+        Intent intent = new Intent(this, Ranking.class);
         startActivity(intent);
 
-        //anirem a una altre pestanya per canviar el nom
     }
-    */
+
 
 
 }

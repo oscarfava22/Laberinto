@@ -35,7 +35,7 @@ public class instruccionsJoc extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager){
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new ifragment1(),"Moviments");
-        adapter.addFragment(new ifragment2(),"ComJugar");
+        adapter.addFragment(new ifragment2(),"Com Jugar");
         adapter.addFragment(new ifragment3(),"Puntuacions");
         viewPager.setAdapter(adapter);
 

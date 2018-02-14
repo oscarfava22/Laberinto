@@ -39,16 +39,15 @@
                 android:text="Moviments" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/ComJugar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ComJugar" />
-
-            <android.support.design.widget.TabItem
                 android:id="@+id/Puntuacions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Puntuacions" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/PARTIDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>

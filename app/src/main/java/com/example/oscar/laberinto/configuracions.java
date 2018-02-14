@@ -30,17 +30,9 @@ public class configuracions extends AppCompatActivity { //classe principal
         } catch (IOException e) {
             e.getMessage();
         }
-        if(volum) {
-            //posem la musica
-            mp.start();
-
-        }else{
-            //posem la musica
-            mp.stop();
-        }
     }
         public void onClickButton(View view) {
-            Button button = (Button) findViewById(R.id.button);
+            Button button = (Button) findViewById(R.id.buttonEngegat);
             button.setVisibility(View.INVISIBLE);
             Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
             buttonApagat.setVisibility(View.VISIBLE);
@@ -49,10 +41,10 @@ public class configuracions extends AppCompatActivity { //classe principal
         }
 
         public void onClickButtonApagat(View view) {
-            Button button = (Button) findViewById(R.id.buttonApagat);
-            button.setVisibility(View.INVISIBLE);
-            Button buttonApagat = (Button) findViewById(R.id.button);
-            buttonApagat.setVisibility(View.VISIBLE);
+            Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+            buttonApagat.setVisibility(View.INVISIBLE);
+            Button button = (Button) findViewById(R.id.buttonEngegat);
+            button.setVisibility(View.VISIBLE);
             volum = true;
             mp.start();
         }

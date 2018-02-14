@@ -9,21 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".configuracions"
             android:label="Configuracions"
             android:screenOrientation="landscape"></activity>
+
         <activity
             android:name=".cronoTest"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape">
+
+
+        </activity>
         <activity
             android:name=".CanviNom"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".menu"
             android:label="@string/title_activity_menu_inicial"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
+
+
 
         </activity>
         <activity
@@ -31,15 +47,12 @@
             android:label="@string/title_activity_instruccions_joc"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
             android:name=".Ranking"
-            android:label="@string/title_activity_ranking"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_ranking">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 
