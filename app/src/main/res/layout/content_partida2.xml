@@ -117,7 +117,7 @@
         android:id="@+id/bola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bola"
+        app:srcCompat="@drawable/bolaf"
         tools:layout_editor_absoluteX="105dp"
         tools:layout_editor_absoluteY="178dp" />
 
