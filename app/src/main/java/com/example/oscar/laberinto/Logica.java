@@ -72,5 +72,41 @@ public class Logica {
         return bola;
     }
 
+    public ImageView inicialitzaPosicioBola(ImageView bola, int nivell, int ScreenWidth, int ScreenHeight) {
+
+        bola.setX(ScreenWidth/2 - 340.0f); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+        bola.setY(ScreenHeight/2 - 98.0f);
+
+        return bola;
+    }
+
+    public boolean comprovarFiPartida(ImageView bola, int nivell) {
+
+        int x_final = 0, y_final = 0;
+
+        switch (nivell){
+
+            case 1:
+
+                x_final = 500;
+                y_final = 300;
+                break;
+
+            case 2:
+                x_final = 400;
+                y_final = 800;
+                break;
+
+            //TODO
+        }
+
+        if (bola.getX() == x_final && bola.getY() == y_final){
+
+            return true;
+        }
+
+        return false;
+    }
+
 }
 

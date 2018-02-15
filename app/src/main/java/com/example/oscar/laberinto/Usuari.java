@@ -31,7 +31,7 @@ public class Usuari implements Comparable<Usuari>{
      * @param estrelles: quantes estrellas ha obtingut
      */
     public void setPuntuacio(int nivell, int estrelles){
-        this.puntuacions[nivell] = estrelles;
+        this.puntuacions[nivell - 1] = estrelles;
     }
 
     /**

@@ -1,16 +1,21 @@
 package com.example.oscar.laberinto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Partida2Activity extends AppCompatActivity implements SensorEventListener{
     /**
@@ -64,6 +69,16 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     private Logica logic;
 
 
+    /*
+    * Variable que emmagatzema el nivell actual al qual juga l'usuari.
+    * */
+    private int nivell;
+
+    /**
+     * Variable que representa el cronometre per mostrar el temps que triga l'usuari a superar el  nivell.
+     */
+    private Chronometer cronometre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -113,12 +128,14 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         maze = (ImageView) findViewById(R.id.maze_image);
 
-        int nivell = getIntent().getExtras().getInt("nivell");
+        nivell = getIntent().getExtras().getInt("nivell");
+
+        cronometre = (Chronometer) findViewById(R.id.chronometer2);
+
+        cronometre.start();
 
         //Inicialitzar posicio bola
-
-        bola.setX(ScreenWidth/2 - 340.0f); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
-        bola.setY(ScreenHeight/2 - 98.0f);
+        bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight);
 
         if (nivell != 1){ //Cal actualitzar la imatge del laberint
 
@@ -210,10 +227,35 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, bola);
 
-            bola_posX.setText("x = " + bola.getX());
-            bola_posY.setText("y = " + bola.getY());
+            if (logic.comprovarFiPartida(bola, nivell)) {
+
+                gestionarFiPartida();
+            }
+
+            bola_posX.setText("x = " + bola.getX()); // DEBUGGING
+            bola_posY.setText("y = " + bola.getY()); // DEBUGGING
         }
 
+    }
+
+    private void gestionarFiPartida() {
+
+        Toast toast1 = Toast.makeText(getApplicationContext(), "Felicitats, has superat el nivell!", Toast.LENGTH_SHORT);
+        toast1.setGravity(Gravity.CENTER, 0, 0);
+        toast1.show();
+
+        int estrelles = new Puntuacions().atribuirPuntuacio((int)((SystemClock.elapsedRealtime() - cronometre.getBase())/100), nivell);
+
+        if (menu.usuari.getPuntuacio(nivell) < estrelles) {
+
+            menu.usuari.setPuntuacio(nivell, estrelles);
+        }
+
+        finish();
+
+        // Activitat normalment unica: pantalla principal del dispositiu.
+        Intent intent = new Intent (this, Nivells2Activity.class);
+        startActivity(intent);
     }
 
     @Override
