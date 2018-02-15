@@ -25,11 +25,6 @@ public class configuracions extends AppCompatActivity { //classe principal
             mp = new MediaPlayer();
             mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mp.prepare();
-            if(volum){
-                mp.start();
-            }else {
-                mp.stop();
-            }
             setContentView(R.layout.configuracions);
 
         } catch (IOException e) {
