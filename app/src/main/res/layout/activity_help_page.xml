@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.oscar.laberinto.HelpPage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/AppTheme.NoActionBar">
+    android:layout_height="match_parent">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -19,12 +18,31 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/textTab7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Per contactar amb els desenvolupadors, enviar un missatge als seguents e-mails:"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                app:layout_constraintBottom_toTopOf="@+id/textTab8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/textTab8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="32dp"
-                android:text=""
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:drawableLeft="@android:drawable/ic_dialog_email"
+                android:drawableTint="@android:color/background_dark"
+                android:text="    oscar.fava.2016@salleurl.edu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -34,20 +52,23 @@
                 app:layout_constraintTop_toBottomOf="@+id/textTab4" />
 
             <TextView
-                android:id="@+id/textTab7"
+                android:id="@+id/textTab9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="32dp"
-                android:drawableLeft="@android:drawable/star_off"
-                android:text="P"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toTopOf="@+id/textTab8"
+                android:drawableLeft="@android:drawable/ic_dialog_email"
+                android:drawableTint="@android:color/background_dark"
+                android:text="    ramon.farre.2016@salleurl.edu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/textTab4" />
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
