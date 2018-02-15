@@ -2,12 +2,15 @@ package com.example.oscar.laberinto;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -79,6 +82,13 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
      */
     private Chronometer cronometre;
 
+    /**
+     * Variables que representen les estrelles segons la puntuacio/temps de l'usuari al acabar el nivell.
+     */
+    private ImageView estrella1;
+    private ImageView estrella2;
+    private ImageView estrella3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -133,6 +143,19 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         cronometre = (Chronometer) findViewById(R.id.chronometer2);
 
         cronometre.start();
+
+        estrella1 = (ImageView) findViewById(R.id.Star1);
+
+        estrella2 = (ImageView) findViewById(R.id.Star2);
+
+        estrella3 = (ImageView) findViewById(R.id.Star3);
+
+        estrella1.setVisibility(View.INVISIBLE);
+        estrella1.setColorFilter(Color.BLACK);
+        estrella2.setVisibility(View.INVISIBLE);
+        estrella2.setColorFilter(Color.BLACK);
+        estrella3.setVisibility(View.INVISIBLE);
+        estrella3.setColorFilter(Color.BLACK);
 
         //Inicialitzar posicio bola
         bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight);
@@ -250,12 +273,50 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             menu.usuari.setPuntuacio(nivell, estrelles);
         }
-
+        mostraEstrelles(estrelles);
         finish();
 
         // Activitat normalment unica: pantalla principal del dispositiu.
         Intent intent = new Intent (this, Nivells2Activity.class);
         startActivity(intent);
+    }
+
+    private void mostraEstrelles(int estrelles) {
+
+        switch(estrelles) {
+
+            case 0:
+
+                estrella1.setColorFilter(Color.GRAY);
+                estrella2.setColorFilter(Color.GRAY);
+                estrella3.setColorFilter(Color.GRAY);
+                break;
+
+            case 1:
+
+                estrella1.setColorFilter(Color.BLACK);
+                estrella2.setColorFilter(Color.GRAY);
+                estrella3.setColorFilter(Color.GRAY);
+                break;
+
+            case 2:
+
+                estrella1.setColorFilter(Color.BLACK);
+                estrella2.setColorFilter(Color.BLACK);
+                estrella3.setColorFilter(Color.GRAY);
+                break;
+
+            case 3:
+
+                estrella1.setColorFilter(Color.BLACK);
+                estrella2.setColorFilter(Color.BLACK);
+                estrella3.setColorFilter(Color.BLACK);
+                break;
+        }
+
+        estrella1.setVisibility(View.VISIBLE);
+        estrella2.setVisibility(View.VISIBLE);
+        estrella3.setVisibility(View.VISIBLE);
     }
 
     @Override
