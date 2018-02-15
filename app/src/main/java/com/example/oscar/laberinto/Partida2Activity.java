@@ -177,39 +177,39 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             case 1:
 
-                return R.drawable.maze_76__thumb1;
+                return R.drawable.maze_66;
 
             case 2:
 
-                return R.drawable.maze_69__thumb;
+                return R.drawable.maze_67;
 
             case 3:
 
-                return R.drawable.maze_73__thumb;
+                return R.drawable.maze_68;
 
             case 4:
 
-                return R.drawable.maze_79__thumb1;
+                return R.drawable.maze_69;
 
             case 5:
 
-                return R.drawable.maze_89_;
+                return R.drawable.maze_70;
 
             case 6:
 
-                return R.drawable.maze_90_;
+                return R.drawable.maze_71;
 
             case 7:
 
-                return R.drawable.maze_96_;
+                return R.drawable.maze_72;
 
             case 8:
 
-                return R.drawable.maze_94_;
+                return R.drawable.maze_73;
 
             default:
 
-                return R.drawable.maze_76__thumb1;
+                return R.drawable.maze_66;
 
         }
     }

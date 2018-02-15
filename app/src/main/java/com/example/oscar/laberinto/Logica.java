@@ -85,8 +85,8 @@ public class Logica {
 
     public ImageView inicialitzaPosicioBola(ImageView bola, int nivell, int ScreenWidth, int ScreenHeight) {
 
-        bola.setX(ScreenWidth/2 - 340.0f); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
-        bola.setY(ScreenHeight/2 - 98.0f);
+        bola.setX(630); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+        bola.setY(207);
 
         return bola;
     }

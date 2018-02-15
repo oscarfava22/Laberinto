@@ -111,7 +111,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maze_76__thumb1" />
+        app:srcCompat="@drawable/maze_66" />
 
     <ImageView
         android:id="@+id/bola"
