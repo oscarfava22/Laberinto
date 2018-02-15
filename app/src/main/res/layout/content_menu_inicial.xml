@@ -32,6 +32,7 @@
                 android:layout_marginTop="56dp"
                 android:backgroundTint="@android:color/background_light"
                 android:drawableStart="@android:drawable/ic_media_play"
+                android:onClick="onClickButtonJugar"
                 android:text="JUGAR"
                 app:layout_constraintBottom_toTopOf="@+id/buttonJugar2"
                 app:layout_constraintEnd_toEndOf="parent"

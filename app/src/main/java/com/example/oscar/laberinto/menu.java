@@ -38,14 +38,14 @@ public class menu extends AppCompatActivity {
 
         //anirem a una altre pestanya per canviar el nom
     }
-    /*
+
     public void onClickButtonJugar(View view){
 
-        Intent intent = new Intent(this, jugar.class);
+        Intent intent = new Intent(this, Nivells2Activity.class);
         startActivity(intent);
 
     }
-      */
+
     public void onClickButtonRanking(View view){
 
         Intent intent = new Intent(this, Ranking.class);
