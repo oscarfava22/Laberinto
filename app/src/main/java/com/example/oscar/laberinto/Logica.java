@@ -28,6 +28,17 @@ public class Logica {
 
         //Exemple: ScreenWidth = 1794/1920; ScreenHeight: 1080
         taulell = new boolean [ScreenHeight/10][ScreenWidth/10][4]; //Dividim entre el valor d'avansament de la bola (10), per obtenir en quantes posicions del taulell pot estar la bola.
+
+        for (int i = 0; i < ScreenHeight/10; i++) {
+
+            for (int j = 0; j < ScreenWidth/10; j++) {
+
+                for (int k = 0; k < 4; k++) {
+                    taulell[i][j][k] = true;
+                }
+            }
+        }
+        /*
         taulell[0][0][0] = true;
         taulell[0][0][1] = false;
         taulell[0][0][2] = false;
@@ -44,7 +55,7 @@ public class Logica {
 
         taulell[1][ScreenWidth/10 - 10][1] = true;
         taulell[2][ScreenWidth/10 - 10][3] = true;
-
+*/
         //Acces a la matriu taulell: taulell[bola.getY()/10][bola.getX()/10]
     }
 
