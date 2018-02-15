@@ -20,6 +20,14 @@ public class menu extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        TextView textUsuari = (TextView) findViewById(R.id.usuari);
+        textUsuari.setText(usuari.getNom());
+    }
+    
+
     public static void canviNomUsuari(String nom){
         usuari.setNom(nom);
     }
@@ -53,6 +61,10 @@ public class menu extends AppCompatActivity {
 
     }
 
+    public void onClickButtonHelp(View view){
+        Intent intent = new Intent(this, HelpPage.class);
+        startActivity(intent);
 
+    }
 
 }

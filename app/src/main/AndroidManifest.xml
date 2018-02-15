@@ -34,7 +34,6 @@
         <activity
             android:name=".instruccionsJoc"
             android:label="@string/title_activity_instruccions_joc"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Ranking"
@@ -48,7 +47,8 @@
             android:name=".Partida2Activity"
             android:label="@string/title_activity_partida2"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HelpPage"></activity>
     </application>
 
 </manifest>

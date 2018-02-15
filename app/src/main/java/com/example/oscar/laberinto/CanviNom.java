@@ -12,15 +12,12 @@ import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class CanviNom extends AppCompatActivity {
 
-    /**
-     private PopupWindow popupWindow;
-     private LayoutInflater layoutInflater;
-     private ConstraintLayout relativeLayout;
-     */
+    private Toast toast1;
 
 
     @Override
@@ -29,7 +26,6 @@ public class CanviNom extends AppCompatActivity {
         setContentView(R.layout.content_canvi_nom);
         TextView textView = (TextView) findViewById(R.id.editText);
         textView.setText(menu.usuari.getNom());
-       // relativeLayout = (ConstraintLayout) findViewById(R.id.relative);
         }
 
 
@@ -40,22 +36,11 @@ public class CanviNom extends AppCompatActivity {
         editText.setText(menu.usuari.getNom());
         menu.canviNomUsuari(editText.getText().toString());
 
-        /**
-        //popUp
-        layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.own_pop_up, null);
+        //toasting popUp
+        toast1 = Toast.makeText(getApplicationContext(), "Nom d'usuari canviat", Toast.LENGTH_SHORT);
+        toast1.setGravity(Gravity.TOP, 0, 30);
+        toast1.show();
 
-        popupWindow = new PopupWindow(container, 100, 100, true);
-        popupWindow.showAtLocation(relativeLayout, Gravity.NO_GRAVITY, 200, 200); //peta
 
-        //wrong doing it!
-        container.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
-            }
-        });
-        **/
     }
 }

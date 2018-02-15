@@ -30,8 +30,8 @@ public class RankingLogics {
         Iterator iterator = array.iterator();
         int i = 0;
         while(iterator.hasNext()){
-            String string = "L'usuari: " + array.get(i).getNom() + "ha conseguit una puntuacio de:" + array.get(i).getPuntuacioTotal().toString();
-            strings.add("i");
+            String string = array.get(i).getNom() + " ha conseguit una puntuacio total de: " + array.get(i).getPuntuacioTotal().toString() + " estrelles";
+            strings.add(string);
             i++;
             iterator.next();
         }

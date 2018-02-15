@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Laberinto.iml" filepath="$PROJECT_DIR$/Laberinto.iml" />
+      <module fileurl="file://C:\Users\oscar\Desktop\laberintoAndroid\MyApplication\Laberinto.iml" filepath="C:\Users\oscar\Desktop\laberintoAndroid\MyApplication\Laberinto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://C:\Users\Ramon\Desktop\Laberinto\MyApplication.iml" filepath="C:\Users\Ramon\Desktop\Laberinto\MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\Ramon\Desktop\Laberinto\app\app.iml" filepath="C:\Users\Ramon\Desktop\Laberinto\app\app.iml" />

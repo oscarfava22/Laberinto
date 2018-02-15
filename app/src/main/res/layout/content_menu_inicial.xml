@@ -8,8 +8,6 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        tools:backgroundTint="@android:color/background_light"
         tools:context=".CanviNom"
         tools:layout_editor_absoluteY="3dp">
 
@@ -90,9 +88,10 @@
             android:id="@+id/helpButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="74dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@android:color/darker_gray"
+            android:onClick="onClickButtonHelp"
             android:src="@android:drawable/ic_menu_info_details"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -110,16 +109,19 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Rate this game"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.DropDownItem"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ratingBar"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintHorizontal_bias="0.897"
+            app:layout_constraintStart_toEndOf="@+id/helpButton"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.49" />
 
         <TextView
             android:id="@+id/textView8"
