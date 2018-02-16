@@ -29,7 +29,14 @@
             android:name=".menu"
             android:label="@string/title_activity_menu_inicial"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".instruccionsJoc"
             android:label="@string/title_activity_instruccions_joc"
@@ -53,11 +60,6 @@
         <activity
             android:name=".Login"
             android:label="Iniciar la sessio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

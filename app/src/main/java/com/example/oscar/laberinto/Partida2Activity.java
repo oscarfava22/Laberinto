@@ -3,14 +3,12 @@ package com.example.oscar.laberinto;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -59,11 +57,12 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     private ImageView maze;
 
     /*
-    * Variables per obtenir el tamany de la pantalla del dispositiu
+    * Variables per obtenir el tamany/densitat de la pantalla del dispositiu
     *
     * */
     private int ScreenWidth; //Anchura
     private int ScreenHeight; //Altura
+    private int ScreenDensity; //Densitat
 
     /*
     *
@@ -104,6 +103,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         ScreenHeight = displayMetrics.heightPixels;
         ScreenWidth = displayMetrics.widthPixels;
+        ScreenDensity = displayMetrics.densityDpi;
 
         //Definir variable logica
         logic = new Logica(ScreenHeight, ScreenWidth);
@@ -158,7 +158,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         estrella3.setColorFilter(Color.BLACK);
 
         //Inicialitzar posicio bola
-        bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight);
+        bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight, ScreenDensity);
 
         if (nivell != 1){ //Cal actualitzar la imatge del laberint
 
