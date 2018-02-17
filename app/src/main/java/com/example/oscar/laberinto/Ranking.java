@@ -2,13 +2,8 @@ package com.example.oscar.laberinto;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class Ranking extends AppCompatActivity {
 

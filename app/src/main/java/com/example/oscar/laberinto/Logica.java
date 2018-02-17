@@ -28,10 +28,20 @@ public class Logica {
             case 1:
 
                 taulell = ContingutLaberint.laberint1();
+                break;
 
             case 2:
 
                 taulell = ContingutLaberint.laberint2();
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+
+                break;
         }
 
     }
