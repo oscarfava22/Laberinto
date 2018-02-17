@@ -14,7 +14,7 @@ public class Nivells2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivells2);
 
-        ImageButton nivell1 = (ImageButton) findViewById(R.id.imageButton7);
+        ImageButton nivell1 = (ImageButton) findViewById(R.id.nivell1);
     }
 
     public void clickNivell1(View view){
@@ -41,29 +41,6 @@ public class Nivells2Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickNivell5(View view){
-        Intent intent = new Intent (Nivells2Activity.this, Partida2Activity.class);
-        intent.putExtra("nivell", 5); //Pasem el nivell a la activity partida
-        startActivity(intent);
-    }
-
-    public void clickNivell6(View view){
-        Intent intent = new Intent (Nivells2Activity.this, Partida2Activity.class);
-        intent.putExtra("nivell", 6); //Pasem el nivell a la activity partida
-        startActivity(intent);
-    }
-
-    public void clickNivell7(View view){
-        Intent intent = new Intent (Nivells2Activity.this, Partida2Activity.class);
-        intent.putExtra("nivell", 7); //Pasem el nivell a la activity partida
-        startActivity(intent);
-    }
-
-    public void clickNivell8(View view){
-        Intent intent = new Intent (Nivells2Activity.this, Partida2Activity.class);
-        intent.putExtra("nivell", 8); //Pasem el nivell a la activity partida
-        startActivity(intent);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

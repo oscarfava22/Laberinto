@@ -9,13 +9,20 @@ import java.util.Iterator;
 
 public class RankingLogics {
 
-    private ArrayList<Usuari> array;
+    private ArrayList<Usuari> array; //refactor failed so dont change name...
+    private Usuari usuariActual;
+
 
     public RankingLogics() {
         array = new ArrayList<Usuari>();
-        addCurrentUsers();
-        Usuari aux = new Usuari("Manolo");
-        array.add(aux);
+        usuariActual = new Usuari("Nom per defecte");
+        addCurrentUsers(); //buscar els usuaris que estaven registrats
+        array.add(new Usuari("Josep"));
+        array.add(new Usuari("Josp"));
+
+    }
+    public Usuari getUsuariActual(){
+        return usuariActual;
     }
 
     public ArrayList<Usuari> addCurrentUsers(){
@@ -33,7 +40,38 @@ public class RankingLogics {
             i++;
             iterator.next();
         }
+        String string = usuariActual.getNom() + " ha conseguit una puntuacio total de: " + usuariActual.getPuntuacioTotal().toString() + " estrelles";
+        strings.add(string);
         return strings;
+    }
+
+    public boolean buscarNomRepetit(String nom){
+        for (Usuari usuari:array) {
+            if (usuari.getNom() == nom){
+                return true;
+            }
+        }
+        return false; //esta repetit
+    }
+
+    public Usuari buscarUsuariRepetit(String nom){
+        for (Usuari usuari:array) {
+            if (usuari.getNom() == nom){
+                return usuari;
+            }
+        }
+        return null;
+    }
+
+
+    public void cambiarNom(String nom){
+
+        if(buscarNomRepetit(nom)){
+            usuariActual = buscarUsuariRepetit(nom);
+        }
+        else{
+            usuariActual.setNom(nom);
+        }
     }
 
     public void setArray(ArrayList<Usuari> array) {

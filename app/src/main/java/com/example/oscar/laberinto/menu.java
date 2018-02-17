@@ -6,17 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+
 public class menu extends AppCompatActivity {
-
-    public static Usuari usuari = new Usuari("Nom per defecte");
-
+    public static RankingLogics ranking = new RankingLogics();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicial);
         TextView textUsuari = (TextView) findViewById(R.id.usuari);
-        textUsuari.setText(usuari.getNom());
+        textUsuari.setText(ranking.getUsuariActual().getNom());
 
     }
 
@@ -24,12 +23,7 @@ public class menu extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         TextView textUsuari = (TextView) findViewById(R.id.usuari);
-        textUsuari.setText(usuari.getNom());
-    }
-    
-
-    public static void canviNomUsuari(String nom){
-        usuari.setNom(nom);
+        textUsuari.setText(ranking.getUsuariActual().getNom());
     }
 
     public void onClickButtonInstructions(View view){
@@ -56,7 +50,7 @@ public class menu extends AppCompatActivity {
 
     public void onClickButtonRanking(View view){
 
-        Intent intent = new Intent(this, Ranking.class);
+        Intent intent = new Intent(this, RankingView.class);
         startActivity(intent);
 
     }

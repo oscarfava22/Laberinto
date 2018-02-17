@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Ranking extends AppCompatActivity {
+public class RankingView extends AppCompatActivity {
 
     private final RankingLogics rankingLogics;
 
-    public Ranking() {
-        rankingLogics = new RankingLogics();
+
+    public RankingView() {
+        rankingLogics = menu.ranking;
     }
 
     @Override
@@ -18,10 +19,8 @@ public class Ranking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_ranking);
 
-
         ListView listView = (ListView) findViewById(R.id.ranking_listview);
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rankingLogics.getArrayByOrder()));
-
 
     }
 }

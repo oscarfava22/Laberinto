@@ -2,64 +2,65 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.oscar.laberinto">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Laberint"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name="com.example.oscar.laberinto.configuracions"
-            android:label="Configuracions"
-            android:screenOrientation="landscape" />
+            android:label="Configuracions"/>
+
         <activity
-            android:name="com.example.oscar.laberinto.cronoTest"
-            android:screenOrientation="landscape" />
+            android:name="com.example.oscar.laberinto.cronoTest"/>
+
         <activity
             android:name="com.example.oscar.laberinto.CanviNom"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.example.oscar.laberinto.menu"
             android:label="@string/title_activity_menu_inicial"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
+
         <activity
             android:name="com.example.oscar.laberinto.instruccionsJoc"
             android:label="@string/title_activity_instruccions_joc"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
-            android:name="com.example.oscar.laberinto.Ranking"
+            android:name="com.example.oscar.laberinto.RankingView"
             android:label="@string/title_activity_ranking" />
+
         <activity
             android:name="com.example.oscar.laberinto.Nivells2Activity"
             android:label="@string/title_activity_nivells2"
-            android:screenOrientation="landscape"
+
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.example.oscar.laberinto.Partida2Activity"
             android:label="@string/title_activity_partida2"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.example.oscar.laberinto.HelpPage"
             android:label="Ajuda" />
+
         <activity
             android:name="com.example.oscar.laberinto.Login"
             android:label="Iniciar la sessio">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

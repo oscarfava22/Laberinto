@@ -8,7 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="horizontal"
     android:id="@+id/ranking"
-    tools:context="com.example.oscar.laberinto.Ranking">
+    tools:context="com.example.oscar.laberinto.RankingView">
 
     <ListView
         android:id="@+id/ranking_listview"

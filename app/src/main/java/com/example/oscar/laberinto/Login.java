@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity  {
 
         AutoCompleteTextView editText = (AutoCompleteTextView) findViewById(R.id.user);
         //buscar si el teniem a la base de dades
-        menu.usuari.setNom(editText.getText().toString());
+        menu.ranking.cambiarNom(editText.getText().toString());
         Intent intent = new Intent(this, menu.class);
         startActivity(intent);
 

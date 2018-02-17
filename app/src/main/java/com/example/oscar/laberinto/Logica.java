@@ -36,7 +36,7 @@ public class Logica {
                 break;
 
             case 3:
-
+                taulell = ContingutLaberint.laberint3();
                 break;
 
             case 4:

@@ -291,9 +291,9 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         */
         int estrelles = new Puntuacions().atribuirPuntuacio((int)((SystemClock.elapsedRealtime() - cronometre.getBase())/100), nivell);
 
-        if (menu.usuari.getPuntuacio(nivell) < estrelles) {
+        if (menu.ranking.getUsuariActual().getPuntuacio(nivell) < estrelles) {
 
-            menu.usuari.setPuntuacio(nivell, estrelles);
+            menu.ranking.getUsuariActual().setPuntuacio(nivell, estrelles);
         }
 
         mostraEstrelles(estrelles);

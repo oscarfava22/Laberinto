@@ -19,16 +19,16 @@ public class CanviNom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_canvi_nom);
         TextView textView = (TextView) findViewById(R.id.editText);
-        textView.setText(menu.usuari.getNom());
+        textView.setText(menu.ranking.getUsuariActual().getNom());
         }
 
 
     public void onClickButtonTree (View view){
 
         EditText editText = (EditText) findViewById(R.id.editText);
-        menu.usuari.setNom(editText.getText().toString());
-        editText.setText(menu.usuari.getNom());
-        menu.canviNomUsuari(editText.getText().toString());
+        menu.ranking.cambiarNom(editText.getText().toString());
+        editText.setText(menu.ranking.getUsuariActual().getNom());
+        menu.ranking.cambiarNom(editText.getText().toString());
 
         //toasting popUp
         toast1 = Toast.makeText(getApplicationContext(), "Nom d'usuari canviat", Toast.LENGTH_SHORT);
