@@ -28,26 +28,12 @@ public class Logica {
             case 1:
 
                 taulell = ContingutLaberint.laberint1();
-        }
-        /*
-        taulell[0][0][0] = true;
-        taulell[0][0][1] = false;
-        taulell[0][0][2] = false;
-        taulell[0][0][3] = false;
 
-        taulell[0][1][0] = true;
-        taulell[1][0][0] = false;
+            case 2:
 
-        taulell[0][2][1] = true;
-
-        for(int i = 2; i < ScreenWidth/10; i++){
-            taulell[1][i][0] = true;
+                taulell = ContingutLaberint.laberint2();
         }
 
-        taulell[1][ScreenWidth/10 - 10][1] = true;
-        taulell[2][ScreenWidth/10 - 10][3] = true;
-*/
-        //Acces a la matriu taulell: taulell[bola.getY()/10][bola.getX()/10]
     }
 
     public ImageView desplasamentBola(SensorEvent event, int ScreenWidth, int ScreenHeight, int ScreenDensity, ImageView bola, int bola_index []) {
@@ -86,29 +72,23 @@ public class Logica {
         return bola;
     }
 
-    public boolean comprovarFiPartida(ImageView bola, int nivell) {
-
-        int x_final = 0, y_final = 0;
+    public boolean comprovarFiPartida(int bola_index [], int nivell) {
 
         switch (nivell){
 
             case 1:
 
-                x_final = 500;
-                y_final = 300;
+                if (bola_index[1] == 0 && (bola_index[0] == 15 || bola_index[0] == 16 || bola_index[0] == 17)){
+
+                    return true;
+                }
                 break;
 
             case 2:
-                x_final = 400;
-                y_final = 800;
+
                 break;
 
             //TODO
-        }
-
-        if (bola.getX() == x_final && bola.getY() == y_final){
-
-            return true;
         }
 
         return false;

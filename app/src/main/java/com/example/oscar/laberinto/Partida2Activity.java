@@ -1,6 +1,7 @@
 package com.example.oscar.laberinto;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -9,6 +10,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -256,7 +258,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
 
-            if (logic.comprovarFiPartida(bola, nivell)) {
+            if (logic.comprovarFiPartida(bola_index, nivell)) {
 
                 gestionarFiPartida();
             }
@@ -271,24 +273,56 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     }
 
+    public void reiniciarNivell () {
+
+        Intent intent = new Intent (this, Partida2Activity.class);
+        intent.putExtra("nivell", nivell);
+        startActivity(intent);
+        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
+    }
+
+    public void tornarAlMenu(){
+
+        Intent intent = new Intent (this, menu.class);
+        startActivity(intent);
+        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
+    }
+
     private void gestionarFiPartida() {
 
+        /*
         Toast toast1 = Toast.makeText(getApplicationContext(), "Felicitats, has superat el nivell!", Toast.LENGTH_SHORT);
         toast1.setGravity(Gravity.CENTER, 0, 0);
         toast1.show();
-
+        */
         int estrelles = new Puntuacions().atribuirPuntuacio((int)((SystemClock.elapsedRealtime() - cronometre.getBase())/100), nivell);
 
         if (menu.usuari.getPuntuacio(nivell) < estrelles) {
 
             menu.usuari.setPuntuacio(nivell, estrelles);
         }
-        mostraEstrelles(estrelles);
-        finish();
 
-        // Activitat normalment unica: pantalla principal del dispositiu.
-        Intent intent = new Intent (this, Nivells2Activity.class);
-        startActivity(intent);
+        mostraEstrelles(estrelles);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Important");
+        dialog.setMessage("Vols reiniciar el nivell o tornar al menu principal?");
+        dialog.setCancelable(false);
+        dialog.setPositiveButton("Reiniciar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                reiniciarNivell();
+            }
+        });
+        dialog.setNegativeButton("Menu principal", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                tornarAlMenu();
+            }
+        });
+        AlertDialog alert = dialog.create();
+        alert.show();
+
     }
 
     private void mostraEstrelles(int estrelles) {
