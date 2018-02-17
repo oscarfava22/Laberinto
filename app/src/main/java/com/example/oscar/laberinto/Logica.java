@@ -75,10 +75,40 @@ public class Logica {
 
     public ImageView inicialitzaPosicioBola(ImageView bola, int nivell, int ScreenWidth, int ScreenHeight, int ScreenDensity, int bola_index []) {
 
-        bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
-        bola.setY((ScreenHeight / 2) - 350 * ScreenDensity / 480);
-        bola_index [0] = 3;
-        bola_index [1] = 2;
+        switch (nivell) {
+
+            case 1:
+
+                bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+                bola.setY((ScreenHeight / 2) - 90 * ScreenDensity / 480);
+                bola_index [0] = 29;
+                bola_index [1] = 2;
+                break;
+
+            case 2:
+
+                bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+                bola.setY((ScreenHeight / 2) - 350 * ScreenDensity / 480);
+                bola_index [0] = 3;
+                bola_index [1] = 2;
+                break;
+
+            case 3:
+
+                bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+                bola.setY((ScreenHeight / 2) - 350 * ScreenDensity / 480);
+                bola_index [0] = 3;
+                bola_index [1] = 2;
+                break;
+
+            case 4:
+
+                bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+                bola.setY((ScreenHeight / 2) - 350 * ScreenDensity / 480);
+                bola_index [0] = 3;
+                bola_index [1] = 2;
+                break;
+        }
         return bola;
     }
 
@@ -88,17 +118,23 @@ public class Logica {
 
             case 1:
 
-                if (bola_index[1] == 0 && (bola_index[0] == 15 || bola_index[0] == 16 || bola_index[0] == 17)){
-
-                    return true;
-                }
+                if (bola_index[1] == 0 && (bola_index[0] == 15 || bola_index[0] == 16 || bola_index[0] == 17)) return true;
                 break;
 
             case 2:
 
+                if (bola_index[0] == 57 && (bola_index[1] == 28 || bola_index[1] == 29)) return true;
                 break;
 
-            //TODO
+            case 3:
+
+                //TODO
+                break;
+
+            case 4:
+
+                //TODO
+                break;
         }
 
         return false;

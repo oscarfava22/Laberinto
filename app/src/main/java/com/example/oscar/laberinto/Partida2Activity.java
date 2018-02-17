@@ -261,10 +261,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
                 gestionarFiPartida();
             }
 
-           // bola_posX.setText("x = " + bola.getX()); // DEBUGGING
-            //bola_posY.setText("y = " + bola.getY()); // DEBUGGING
-           // bola_posY.setText("fila = " + ((int) bola.getX() / 10 - ((ScreenWidth / 2) - 320 * ScreenDensity / 480 - 20) / 10)); // DEBUGGING
-            //bola_posX.setText("columna = " + ((int) bola.getY() / 10 - ((ScreenHeight / 2) - 350 * ScreenDensity / 480) / 10)); // DEBUGGING
             bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
             bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
         }
