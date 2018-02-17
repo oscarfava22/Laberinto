@@ -45,6 +45,10 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     private TextView bola_posX;
 
     private TextView bola_posY;
+
+    private int bola_index []; // Indica l'index de la casella a la matriu
+
+
     /**
      *
      * Variable que representa la bola
@@ -105,8 +109,10 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         ScreenWidth = displayMetrics.widthPixels;
         ScreenDensity = displayMetrics.densityDpi;
 
+        nivell = getIntent().getExtras().getInt("nivell");
+
         //Definir variable logica
-        logic = new Logica(ScreenHeight, ScreenWidth);
+        logic = new Logica(ScreenHeight, ScreenWidth, nivell);
 
 /*
         if (rotationSensor == null){
@@ -136,9 +142,9 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         bola = (ImageView) findViewById(R.id.bola);
 
-        maze = (ImageView) findViewById(R.id.maze_image);
+        bola_index = new int [2];
 
-        nivell = getIntent().getExtras().getInt("nivell");
+        maze = (ImageView) findViewById(R.id.maze_image);
 
         cronometre = (Chronometer) findViewById(R.id.chronometer2);
 
@@ -158,7 +164,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         estrella3.setColorFilter(Color.BLACK);
 
         //Inicialitzar posicio bola
-        bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight, ScreenDensity);
+        bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight, ScreenDensity, bola_index);
 
         if (nivell != 1){ //Cal actualitzar la imatge del laberint
 
@@ -248,15 +254,19 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             // Desplasament de la bola
 
-            bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, bola);
+            bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
 
             if (logic.comprovarFiPartida(bola, nivell)) {
 
                 gestionarFiPartida();
             }
 
-            bola_posX.setText("x = " + bola.getX()); // DEBUGGING
-            bola_posY.setText("y = " + bola.getY()); // DEBUGGING
+           // bola_posX.setText("x = " + bola.getX()); // DEBUGGING
+            //bola_posY.setText("y = " + bola.getY()); // DEBUGGING
+           // bola_posY.setText("fila = " + ((int) bola.getX() / 10 - ((ScreenWidth / 2) - 320 * ScreenDensity / 480 - 20) / 10)); // DEBUGGING
+            //bola_posX.setText("columna = " + ((int) bola.getY() / 10 - ((ScreenHeight / 2) - 350 * ScreenDensity / 480) / 10)); // DEBUGGING
+            bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
+            bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
         }
 
     }
@@ -332,33 +342,44 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         if (bola.getX() < ScreenWidth - 110) {
 
-            bola.setX(bola.getX() + 5);
+            bola.setX(bola.getX() + (10 * (float)ScreenDensity / 480));
+            bola_index[1] ++;
         }
-
+        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBLeft (View view) {
 
         if (bola.getX() > 0) {
 
-            bola.setX(bola.getX() - 5);
+            bola.setX(bola.getX() - (10 * (float)ScreenDensity / 480));
+            bola_index[1] --;
         }
+        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBUp (View view) {
 
         if (bola.getY() > 0) {
 
-            bola.setY(bola.getY() - 5);
+            bola.setY(bola.getY() - (10 * (float)ScreenDensity / 480));
+            bola_index[0] --;
         }
+        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBDown (View view) {
 
         if (bola.getY() < ScreenHeight - 170) {
 
-            bola.setY(bola.getY() + 5);
+            bola.setY(bola.getY() + (10 * (float)ScreenDensity / 480));
+            bola_index[0] ++;
         }
+        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
 }
