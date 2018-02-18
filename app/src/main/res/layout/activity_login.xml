@@ -30,7 +30,7 @@
                     android:id="@+id/user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nom d'usuari"
+                    android:hint="Escriu el nom d'usuari"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Iniciar Sessio"
+                android:text="Iniciar Sessió"
                 android:onClick="onClickButtonLogin"
                 android:textStyle="bold" />
 

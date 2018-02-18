@@ -26,6 +26,8 @@ public class configuracions extends AppCompatActivity { //classe principal
             mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mp.prepare();
             setContentView(R.layout.configuracions);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         } catch (IOException e) {
             e.getMessage();

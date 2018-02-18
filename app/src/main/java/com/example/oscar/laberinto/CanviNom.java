@@ -1,6 +1,7 @@
 package com.example.oscar.laberinto;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -20,6 +21,9 @@ public class CanviNom extends AppCompatActivity {
         setContentView(R.layout.content_canvi_nom);
         TextView textView = (TextView) findViewById(R.id.editText);
         textView.setText(menu.ranking.getUsuariActual().getNom());
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Canvi de Nom");
         }
 
 
@@ -32,8 +36,9 @@ public class CanviNom extends AppCompatActivity {
 
         //toasting popUp
         toast1 = Toast.makeText(getApplicationContext(), "Nom d'usuari canviat", Toast.LENGTH_SHORT);
-        toast1.setGravity(Gravity.TOP, 0, 30);
+        toast1.setGravity(Gravity.RIGHT|Gravity.TOP|Gravity.START, 0, 30);
         toast1.show();
+
 
 
     }

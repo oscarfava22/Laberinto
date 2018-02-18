@@ -13,14 +13,13 @@
 
         <activity
             android:name="com.example.oscar.laberinto.configuracions"
-            android:label="Configuracions"/>
+            android:label="Configuracions"
+            android:parentActivityName=".menu"/>
 
-        <activity
-            android:name="com.example.oscar.laberinto.cronoTest"/>
 
         <activity
             android:name="com.example.oscar.laberinto.CanviNom"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".configuracions" />
 
         <activity
             android:name="com.example.oscar.laberinto.menu"
@@ -31,17 +30,18 @@
         <activity
             android:name="com.example.oscar.laberinto.instruccionsJoc"
             android:label="@string/title_activity_instruccions_joc"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".menu"/>
 
         <activity
             android:name="com.example.oscar.laberinto.RankingView"
-            android:label="@string/title_activity_ranking" />
+            android:label="@string/title_activity_ranking"
+            android:parentActivityName=".menu"/>
 
         <activity
             android:name="com.example.oscar.laberinto.Nivells2Activity"
             android:label="@string/title_activity_nivells2"
-
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".menu"/>
 
         <activity
             android:name="com.example.oscar.laberinto.Partida2Activity"
@@ -51,11 +51,12 @@
 
         <activity
             android:name="com.example.oscar.laberinto.HelpPage"
-            android:label="Ajuda" />
+            android:label="Secció d'ajuda a l'usuari"
+            android:parentActivityName=".menu"/>
 
         <activity
             android:name="com.example.oscar.laberinto.Login"
-            android:label="Iniciar la sessio">
+            android:label="Iniciar la sessió">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -15,9 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Selecciona un nivell"
+        android:layout_marginTop="68dp"
+        android:text="Selecciona el nivell que desitgis:"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,13 +28,16 @@
         android:layout_width="match_parent"
         android:layout_height="295dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <ImageButton
@@ -43,12 +47,13 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@android:color/transparent"
             android:gravity="center"
             android:onClick="clickNivell1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/boto" />
+            app:srcCompat="@drawable/level1" />
 
         <ImageButton
             android:id="@+id/nivell2"
@@ -56,13 +61,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="64dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@android:color/transparent"
             android:onClick="clickNivell2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.341"
             app:layout_constraintStart_toEndOf="@+id/nivell1"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/boto" />
+            app:srcCompat="@drawable/level2" />
 
         <ImageButton
             android:id="@+id/nivell3"
@@ -70,10 +76,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="24dp"
+            android:backgroundTint="@android:color/transparent"
             android:onClick="clickNivell3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nivell1Text"
-            app:srcCompat="@drawable/boto" />
+            app:srcCompat="@drawable/level3" />
 
         <ImageButton
             android:id="@+id/nivell4"
@@ -82,12 +89,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="64dp"
             android:layout_marginTop="24dp"
+            android:backgroundTint="@android:color/transparent"
             android:onClick="clickNivell4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.34"
             app:layout_constraintStart_toEndOf="@+id/nivell3"
             app:layout_constraintTop_toBottomOf="@+id/nivell2Text"
-            app:srcCompat="@drawable/boto" />
+            app:srcCompat="@drawable/level4" />
 
         <TextView
             android:id="@+id/nivell3Text"

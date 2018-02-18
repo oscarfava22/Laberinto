@@ -13,6 +13,9 @@ public class Nivells2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivells2);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Selecció de nivell");
 
         ImageButton nivell1 = (ImageButton) findViewById(R.id.nivell1);
     }

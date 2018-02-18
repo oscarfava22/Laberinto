@@ -57,6 +57,7 @@ public class RankingLogics {
     public Usuari buscarUsuariRepetit(String nom){
         for (Usuari usuari:array) {
             if (usuari.getNom() == nom){
+                array.remove(usuari);
                 return usuari;
             }
         }

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 
 public class instruccionsJoc extends AppCompatActivity {
@@ -29,6 +30,7 @@ public class instruccionsJoc extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs); //error
         tabLayout.setupWithViewPager(mViewpager);
+
 
     }
 
