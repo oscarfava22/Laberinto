@@ -191,4 +191,5 @@
         completions."
     </string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="title_activity_fi_partida">FiPartidaActivity</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.oscar.laberinto;
 
 import android.hardware.SensorEvent;
+import android.provider.ContactsContract;
 import android.widget.ImageView;
 
 /**
@@ -51,23 +52,23 @@ public class Logica {
         //Desplasament cap a la dreta
         if (event.values[0] > ROTATION_THRESHOLD && bola_index[1] < 57 && taulell[bola_index[0]][bola_index[1]][0]) {
 
-            bola.setX(bola.getX() + 10);
+            bola.setX(bola.getX() + (10 * (float)ScreenDensity / 480));
             bola_index[1] ++;
 
         }else if (event.values[0] < -ROTATION_THRESHOLD && bola_index[1] > 0 && taulell[bola_index[0]][bola_index[1]][2]) {
 
-            bola.setX(bola.getX() - 10);
+            bola.setX(bola.getX() - (10 * (float)ScreenDensity / 480));
             bola_index[1] --;
         }
         //Desplasament cap a dalt
         if (event.values[1] > ROTATION_THRESHOLD && bola_index[0] > 0 && taulell[bola_index[0]][bola_index[1]][3]) {
 
-            bola.setY(bola.getY() - 10);
+            bola.setY(bola.getY() - (10 * (float)ScreenDensity / 480));
             bola_index[0] --;
 
         }else if (event.values[1] < -ROTATION_THRESHOLD && bola_index[0] < 57 && taulell[bola_index[0]][bola_index[1]][1]) {
 
-            bola.setY(bola.getY() + 10);
+            bola.setY(bola.getY() + (10 * (float)ScreenDensity / 480));
             bola_index[0] ++;
         }
         return bola;
@@ -140,5 +141,45 @@ public class Logica {
         return false;
     }
 
+    public ImageView desplasamentBotoRight(ImageView bola, int[] bola_index, int ScreenWidth, int ScreenDensity) {
+
+        if (bola_index[1] < 57 && taulell[bola_index[0]][bola_index[1]][0]) {
+
+            bola.setX(bola.getX() + (10 * (float)ScreenDensity / 480));
+            bola_index[1] ++;
+        }
+        return bola;
+    }
+
+    public ImageView desplasamentBotoLeft (ImageView bola, int[] bola_index, int ScreenDensity){
+
+        if (bola_index[1] > 0 && taulell[bola_index[0]][bola_index[1]][2]) {
+
+            bola.setX(bola.getX() - (10 * (float)ScreenDensity / 480));
+            bola_index[1] --;
+        }
+
+        return bola;
+    }
+
+    public ImageView desplasamentBotoUp(ImageView bola, int[] bola_index, int ScreenDensity) {
+
+        if (bola_index[0] > 0 && taulell[bola_index[0]][bola_index[1]][3]) {
+
+            bola.setY(bola.getY() - (10 * (float)ScreenDensity / 480));
+            bola_index[0] --;
+        }
+        return bola;
+    }
+
+    public ImageView desplasamentBotoDown(ImageView bola, int[] bola_index, int screenHeight, int screenDensity) {
+
+        if (bola_index[0] < 57 && taulell[bola_index[0]][bola_index[1]][1]) {
+
+            bola.setY(bola.getY() + (10 * (float)screenDensity / 480));
+            bola_index[0] ++;
+        }
+        return bola;
+    }
 }
 

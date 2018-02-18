@@ -362,50 +362,34 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     }
 
-    /**
-     * Metode temporal per fer proves. Al pulsar el boto fa avansar la bola horitzontalment, cap a la dreta.
-     * @param view
-     */
     public void onClickBRight (View view){
 
-        if (bola.getX() < ScreenWidth - 110) {
+        bola = logic.desplasamentBotoRight(bola, bola_index, ScreenWidth, ScreenDensity);
 
-            bola.setX(bola.getX() + (10 * (float)ScreenDensity / 480));
-            bola_index[1] ++;
-        }
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBLeft (View view) {
 
-        if (bola.getX() > 0) {
+        bola = logic.desplasamentBotoLeft(bola, bola_index, ScreenDensity);
 
-            bola.setX(bola.getX() - (10 * (float)ScreenDensity / 480));
-            bola_index[1] --;
-        }
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBUp (View view) {
 
-        if (bola.getY() > 0) {
+        bola = logic.desplasamentBotoUp(bola, bola_index, ScreenDensity);
 
-            bola.setY(bola.getY() - (10 * (float)ScreenDensity / 480));
-            bola_index[0] --;
-        }
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
 
     public void onClickBDown (View view) {
 
-        if (bola.getY() < ScreenHeight - 170) {
+        bola = logic.desplasamentBotoDown(bola, bola_index, ScreenHeight, ScreenDensity);
 
-            bola.setY(bola.getY() + (10 * (float)ScreenDensity / 480));
-            bola_index[0] ++;
-        }
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
