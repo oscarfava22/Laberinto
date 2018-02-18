@@ -88,10 +88,10 @@ public class Logica {
 
             case 2:
 
-                bola.setX((ScreenWidth / 2) - 320 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
-                bola.setY((ScreenHeight / 2) - 350 * ScreenDensity / 480);
-                bola_index [0] = 3;
-                bola_index [1] = 2;
+                bola.setX((ScreenWidth / 2) - 190 * ScreenDensity / 480); //FER EN FUNCIO DEL TAMANY DE LA PANTALLA
+                bola.setY((ScreenHeight / 2) + 170 * ScreenDensity / 480);
+                bola_index [0] = 55;
+                bola_index [1] = 15;
                 break;
 
             case 3:

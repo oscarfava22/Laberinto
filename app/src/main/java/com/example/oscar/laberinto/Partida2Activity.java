@@ -85,13 +85,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
      */
     private Chronometer cronometre;
 
-    /**
-     * Variables que representen les estrelles segons la puntuacio/temps de l'usuari al acabar el nivell.
-     */
-    private ImageView estrella1;
-    private ImageView estrella2;
-    private ImageView estrella3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -149,19 +142,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         cronometre = (Chronometer) findViewById(R.id.chronometer2);
 
         cronometre.start();
-
-        estrella1 = (ImageView) findViewById(R.id.Star1);
-
-        estrella2 = (ImageView) findViewById(R.id.Star2);
-
-        estrella3 = (ImageView) findViewById(R.id.Star3);
-
-        estrella1.setVisibility(View.INVISIBLE);
-        estrella1.setColorFilter(Color.BLACK);
-        estrella2.setVisibility(View.INVISIBLE);
-        estrella2.setColorFilter(Color.BLACK);
-        estrella3.setVisibility(View.INVISIBLE);
-        estrella3.setColorFilter(Color.BLACK);
 
         //Inicialitzar posicio bola
         bola = logic.inicialitzaPosicioBola(bola, nivell, ScreenWidth, ScreenHeight, ScreenDensity, bola_index);
@@ -226,6 +206,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         super.onResume();
         //Amb la constant SENSOR_DELAY_NORMAL indiquem la frequencia amb la qual es llegiran les dades del sensor
         sensorManager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_NORMAL);
+
     }
 
     @Override
@@ -267,21 +248,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     }
 
-    public void reiniciarNivell () {
-
-        Intent intent = new Intent (this, Partida2Activity.class);
-        intent.putExtra("nivell", nivell);
-        startActivity(intent);
-        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
-    }
-
-    public void tornarAlMenu(){
-
-        Intent intent = new Intent (this, menu.class);
-        startActivity(intent);
-        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
-    }
-
     private void gestionarFiPartida() {
 
         /*
@@ -295,66 +261,10 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             menu.ranking.getUsuariActual().setPuntuacio(nivell, estrelles);
         }
-
-        mostraEstrelles(estrelles);
-
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Important");
-        dialog.setMessage("Vols reiniciar el nivell o tornar al menu principal?");
-        dialog.setCancelable(false);
-        dialog.setPositiveButton("Reiniciar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                reiniciarNivell();
-            }
-        });
-        dialog.setNegativeButton("Menu principal", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tornarAlMenu();
-            }
-        });
-        AlertDialog alert = dialog.create();
-        alert.show();
-
-    }
-
-    private void mostraEstrelles(int estrelles) {
-
-        switch(estrelles) {
-
-            case 0:
-
-                estrella1.setColorFilter(Color.GRAY);
-                estrella2.setColorFilter(Color.GRAY);
-                estrella3.setColorFilter(Color.GRAY);
-                break;
-
-            case 1:
-
-                estrella1.setColorFilter(Color.BLACK);
-                estrella2.setColorFilter(Color.GRAY);
-                estrella3.setColorFilter(Color.GRAY);
-                break;
-
-            case 2:
-
-                estrella1.setColorFilter(Color.BLACK);
-                estrella2.setColorFilter(Color.BLACK);
-                estrella3.setColorFilter(Color.GRAY);
-                break;
-
-            case 3:
-
-                estrella1.setColorFilter(Color.BLACK);
-                estrella2.setColorFilter(Color.BLACK);
-                estrella3.setColorFilter(Color.BLACK);
-                break;
-        }
-
-        estrella1.setVisibility(View.VISIBLE);
-        estrella2.setVisibility(View.VISIBLE);
-        estrella3.setVisibility(View.VISIBLE);
+        Intent intent = new Intent (this, FiPartidaActivity.class);
+        intent.putExtra("nivell", nivell);
+        intent.putExtra("estrelles", estrelles);
+        startActivity(intent);
     }
 
     @Override
@@ -366,6 +276,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         bola = logic.desplasamentBotoRight(bola, bola_index, ScreenWidth, ScreenDensity);
 
+        if (logic.comprovarFiPartida(bola_index, nivell)) {
+
+            gestionarFiPartida();
+        }
+
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
@@ -373,6 +288,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     public void onClickBLeft (View view) {
 
         bola = logic.desplasamentBotoLeft(bola, bola_index, ScreenDensity);
+
+        if (logic.comprovarFiPartida(bola_index, nivell)) {
+
+            gestionarFiPartida();
+        }
 
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
@@ -382,6 +302,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         bola = logic.desplasamentBotoUp(bola, bola_index, ScreenDensity);
 
+        if (logic.comprovarFiPartida(bola_index, nivell)) {
+
+            gestionarFiPartida();
+        }
+
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
     }
@@ -389,6 +314,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     public void onClickBDown (View view) {
 
         bola = logic.desplasamentBotoDown(bola, bola_index, ScreenHeight, ScreenDensity);
+
+        if (logic.comprovarFiPartida(bola_index, nivell)) {
+
+            gestionarFiPartida();
+        }
 
         bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
         bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING

@@ -17,7 +17,6 @@ public class Nivells2Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Selecció de nivell");
 
-        ImageButton nivell1 = (ImageButton) findViewById(R.id.nivell1);
     }
 
     public void clickNivell1(View view){
