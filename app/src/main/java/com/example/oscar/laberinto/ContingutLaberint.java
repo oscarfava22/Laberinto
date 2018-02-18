@@ -9,17 +9,7 @@ public class ContingutLaberint {
     public static boolean[][][] laberint1() {
 
         boolean [][][] taulell = new boolean[58][58][4]; //La 3a component si val: 0-anar cap a la dreta, 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
-/*
-        for (int i = 0; i < 58; i++) {
 
-            for (int j = 0; j < 58; j++) {
-
-                for (int k = 0; k < 4; k++) {
-                    taulell[i][j][k] = true;
-                }
-            }
-        }
-  */
         taulell [2][1][1] = true;
         taulell [2][1][0] = true;
 
@@ -136,7 +126,6 @@ public class ContingutLaberint {
 
         }
 
-        taulell[41][16][0] = true;
         taulell[28][16][1] = true;
         taulell[28][16][2] = true;
         taulell[43][16][0] = true;
@@ -145,6 +134,8 @@ public class ContingutLaberint {
         taulell[42][16][0] = true;
         taulell[43][15][0] = true;
         taulell[43][15][3] = true;
+
+        taulell[42][28][3] = true;
 
         for(int i = 16; i <= 28; i++) {
             taulell[42][i][0] = true;
@@ -225,6 +216,9 @@ public class ContingutLaberint {
             taulell[3][i][3] = true;
         }
 
+        taulell[56][2][0] = true;
+        taulell[56][2][3] = true;
+
         for (int i = 3; i <= 55; i++) {
             taulell[i][2][0] = true;
             taulell[i][2][1] = true;
@@ -233,6 +227,9 @@ public class ContingutLaberint {
             taulell[i][3][2] = true;
             taulell[i][3][3] = true;
         }
+
+        taulell[54][16][1] = true;
+        taulell[54][16][2] = true;
 
         for (int i = 3; i <= 15; i++) {
             taulell[54][i][0] = true;
