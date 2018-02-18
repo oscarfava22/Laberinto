@@ -1,6 +1,7 @@
 package com.example.oscar.laberinto;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,20 +9,26 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
 public class Login extends AppCompatActivity  {
 
+    private JsonManager jsonManager;
+    private String FILENAME = "file";
+    private FileOutputStream fos;
+    private FileInputStream fis;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        //Toast toast1 = Toast.makeText(getApplicationContext(), usuari.getNom(), Toast.LENGTH_SHORT);
-       //toast1.setGravity(Gravity.BOTTOM, 0, 30);
-       //toast1.show();
+        carregaFitxer();
     }
 
     public void onClickButtonLogin (View view){
@@ -40,5 +47,29 @@ public class Login extends AppCompatActivity  {
 
     }
 
+    public void carregaFitxer(){
+        /**
+        try {
+            fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fos.write(string.getBytes());
+            fis = openFileInput(FILENAME);
+            int c;
+            temp="";
+            while( (c = fis.read()) != -1){
+                temp = temp + Character.toString((char)c);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fos.close();
+                fis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+         **/
+    }
 }
 

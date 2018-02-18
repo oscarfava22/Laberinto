@@ -745,6 +745,143 @@ public class ContingutLaberint {
 
         //inicio/final
 
+        //bug
+        for (int i = 15; i < 2; i--) {
+            taulell[i][42][1] = true;
+            taulell[i][42][3] = true;
+
+        }
+        taulell[15][42][0] = false;
+        taulell[2][41][3] = false;
+
+
+
+        return taulell;
+    }
+
+    public static boolean[][][] laberint4() {
+
+        boolean[][][] taulell = new boolean[58][58][4];
+        //La 3a component si val: 0-anar cap a la dreta,
+        // 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
+
+        //inici
+        taulell[3][0][0] = true;
+        taulell[3][1][1] = true;
+
+        for (int i = 3; i < 56; i++) { //2
+            taulell[i][2][3] = true;
+            taulell[i][2][1] = true;
+            taulell[i][2][0] = true;
+        }
+        taulell[56][2][3] = true;
+        taulell[56][2][0] = true;
+        taulell[3][2][3] = false;
+
+        for (int i = 3; i < 56; i++) { //3
+            taulell[i][3][1] = true;
+            taulell[i][3][2] = true;
+            taulell[i][3][3] = true;
+        }
+        taulell[56][3][3] = true;
+        taulell[56][3][2] = true;
+        taulell[3][3][3] = false;
+
+
+        for (int i = 2; i < 55; i++) { //55
+            taulell[55][i][0] = true;
+            taulell[55][i][2] = true;
+            taulell[55][i][1] = true;
+        }
+        taulell[55][55][2] = true;
+        taulell[55][55][1] = true;
+        taulell[55][2][2] = false;
+
+        for (int i = 2; i < 55; i++) { //56
+            taulell[56][i][0] = true;
+            taulell[56][i][2] = true;
+            taulell[56][i][3] = true;
+        }
+        taulell[56][55][3] = true;
+        taulell[56][55][2] = true;
+        taulell[56][2][2] = false;
+
+
+
+        for (int i = 55; i < 29; i--) { //54
+            taulell[i][54][1] = true;
+            taulell[i][54][3] = true;
+            taulell[i][54][0] = true;
+        }
+        taulell[29][54][1] = true;
+        taulell[29][54][0] = true;
+        taulell[55][54][1] = false;
+
+        for (int i = 55; i < 29; i--) { //55
+            taulell[i][55][1] = true;
+            taulell[i][55][3] = true;
+            taulell[i][55][0] = true;
+        }
+        taulell[29][55][1] = true;
+        taulell[29][55][0] = true;
+        taulell[55][55][1] = false;
+
+
+        for (int i = 55; i < 28; i--) { //29
+            taulell[29][i][0] = true;
+            taulell[29][i][2] = true;
+            taulell[29][i][1] = true;
+        }
+        taulell[28][29][0] = true;
+        taulell[28][29][1] = true;
+        taulell[55][29][0] = false;
+
+        for (int i = 55; i < 28; i--) { //30
+            taulell[30][i][0] = true;
+            taulell[30][i][2] = true;
+            taulell[30][i][3] = true;
+        }
+        taulell[28][30][0] = true;
+        taulell[28][30][3] = true;
+        taulell[55][30][0] = false;
+
+
+        for (int i = 30; i < 16; i--) { //28
+            taulell[i][28][3] = true;
+            taulell[i][28][1] = true;
+            taulell[i][28][0] = true;
+        }
+        taulell[16][28][1] = true;
+        taulell[16][28][0] = true;
+        taulell[30][28][1] = false;
+
+        for (int i = 30; i < 16; i--) { //29
+            taulell[i][29][3] = true;
+            taulell[i][29][1] = true;
+            taulell[i][29][2] = true;
+        }
+        taulell[16][29][1] = true;
+        taulell[16][29][2] = true;
+        taulell[30][29][1] = false;
+
+        for (int i = 28; i < 55; i++) { //16
+            taulell[16][i][2] = true;
+            taulell[16][i][0] = true;
+        }
+        taulell[16][55][2] = true;
+        taulell[16][28][2] = false;
+
+/**
+         for (int i = ; i < ; i++) { //voy por fila 42 columna  54
+         taulell[][][] = true;
+         taulell[][][] = true;
+         taulell[][][] = true;
+         }
+         taulell[][][] = true;
+         taulell[][][] = true;
+         taulell[][][] = false;
+ */
+
 
         return taulell;
     }

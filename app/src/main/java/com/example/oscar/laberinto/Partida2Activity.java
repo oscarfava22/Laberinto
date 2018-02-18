@@ -175,7 +175,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             case 4:
 
-                return R.drawable.maze_69;
+                return R.drawable.maze_73;
 
             case 5:
 
@@ -191,7 +191,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             case 8:
 
-                return R.drawable.maze_73;
+                return R.drawable.maze_69;
 
             default:
 
@@ -235,7 +235,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
             // Desplasament de la bola
 
-            bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
+            //bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
 
             if (logic.comprovarFiPartida(bola_index, nivell)) {
 
