@@ -22,7 +22,6 @@ public class menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicial);
         TextView textUsuari = (TextView) findViewById(R.id.usuari);
         textUsuari.setText(ranking.getUsuariActual().getNom());
-
     }
 
     /**

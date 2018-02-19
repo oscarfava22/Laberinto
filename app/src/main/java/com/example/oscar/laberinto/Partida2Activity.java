@@ -1,16 +1,14 @@
 package com.example.oscar.laberinto;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -19,38 +17,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Partida2Activity extends AppCompatActivity implements SensorEventListener{
+
     /**
-
      * Sensors
-
      */
-
     private SensorManager sensorManager;
 
     private Sensor rotationSensor;
 
-
     /**
-
-     * Variables dels textos per mostrar els valors del giroscopi (PER FER PROVES)
-
+     * Variables dels textos per mostrar els valors de la fila i columna on es troba la bola.
      */
 
-    private TextView mRotx;
-
-    private TextView mRoty;
-
-    private TextView mRotz;
 
     private TextView bola_posX;
 
     private TextView bola_posY;
 
-    private int bola_index []; // Indica l'index de la casella a la matriu
-
+    /**
+     * Variable que representa l'index de la casella a la matriu
+     */
+    private int bola_index [];
 
     /**
-     *
      * Variable que representa la bola
      */
     private ImageView bola;
@@ -60,24 +49,24 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
      */
     private ImageView maze;
 
-    /*
+    /**
     * Variables per obtenir el tamany/densitat de la pantalla del dispositiu
-    *
-    * */
+    */
     private int ScreenWidth; //Anchura
+
     private int ScreenHeight; //Altura
+
     private int ScreenDensity; //Densitat
 
-    /*
-    *
+    /**
     * Variable de classe Logica per el desplasament de la bola, control del game over i del final de la partida.
     */
     private Logica logic;
 
 
-    /*
+    /**
     * Variable que emmagatzema el nivell actual al qual juga l'usuari.
-    * */
+    */
     private int nivell;
 
     /**
@@ -85,6 +74,10 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
      */
     private Chronometer cronometre;
 
+    /**
+     * Metode on s'inicialitzen totes les variables mes importants per la deteccio d'interaccions per part de l'usuari.
+     * Tambe per la representacio de la imatge.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -93,7 +86,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         //Obtenir el sensor
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        rotationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+        rotationSensor = sensorManager != null ? sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) : null;
 
         //Obtenir tamany pantalla del dispositiu
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -123,11 +116,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             startActivity(intent);
         }
 */
-        mRotx = (TextView) findViewById(R.id.rot_x);
-
-        mRoty = (TextView) findViewById(R.id.rot_y);
-
-        mRotz = (TextView) findViewById(R.id.rot_z);
 
         bola_posX = (TextView) findViewById(R.id.pos_x);
 
@@ -155,7 +143,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     /**
      * Metode que s'encarrega de retornar l'id corresponent al drawable/imatge pel nivell actual, rebut com a parametre.
-     * @return
+     * @return int: retorna l'id del drawable a carregar com a laberint segons el nivell.
      */
     public int actualitzaLaberint(int nivell){
 
@@ -216,7 +204,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         sensorManager.unregisterListener(this);
     }
 
-
+    /**
+     * Aquest metode detecta moviments amb els sensors. En cas que hi hagi un canvi al sensor de rotacio notificara gestionara el desplasament de la bola.
+     * @param event
+     */
+    @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent event) {
 
@@ -227,15 +219,8 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
         if(event.sensor.getType() == Sensor.TYPE_ROTATION_VECTOR){
 
-            mRotx.setText("x = " + Float.toString(event.values[0])); // DEBUGGING
-
-            mRoty.setText("y = " + Float.toString(event.values[1])); // DEBUGGING
-
-            mRotz.setText("z = " + Float.toString(event.values[2])); // DEBUGGING
-
-            // Desplasament de la bola
-
-            //bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
+            //Desplasament de la bola
+            bola = logic.desplasamentBola(event, ScreenWidth, ScreenHeight, ScreenDensity, bola, bola_index);
 
             if (logic.comprovarFiPartida(bola_index, nivell)) {
 
@@ -248,13 +233,11 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     }
 
+    /**
+     * Metode que gestiona el final de la partida: emmagatzemant les dades de la partida i interaccionant amb el jugador.
+     */
     private void gestionarFiPartida() {
 
-        /*
-        Toast toast1 = Toast.makeText(getApplicationContext(), "Felicitats, has superat el nivell!", Toast.LENGTH_SHORT);
-        toast1.setGravity(Gravity.CENTER, 0, 0);
-        toast1.show();
-        */
         int estrelles = new Puntuacions().atribuirPuntuacio((int)((SystemClock.elapsedRealtime() - cronometre.getBase())/100), nivell);
 
         if (menu.ranking.getUsuariActual().getPuntuacio(nivell) < estrelles) {
@@ -265,6 +248,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         intent.putExtra("nivell", nivell);
         intent.putExtra("estrelles", estrelles);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -272,6 +256,9 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
 
     }
 
+    /**
+     * Aquest metode detecta quan l'usuari prem el boto i gestiona el desplasament de la bola cap a la dreta.
+     */
     public void onClickBRight (View view){
 
         bola = logic.desplasamentBotoRight(bola, bola_index, ScreenWidth, ScreenDensity);
@@ -281,10 +268,12 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
+        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
-
+    /**
+     * Aquest metode detecta quan l'usuari prem el boto i gestiona el desplasament de la bola cap a la esquerra.
+     */
     public void onClickBLeft (View view) {
 
         bola = logic.desplasamentBotoLeft(bola, bola_index, ScreenDensity);
@@ -294,10 +283,13 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
+        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
+    /**
+     * Aquest metode detecta quan l'usuari prem el boto i gestiona el desplasament de la bola cap a dalt.
+     */
     public void onClickBUp (View view) {
 
         bola = logic.desplasamentBotoUp(bola, bola_index, ScreenDensity);
@@ -307,10 +299,13 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
+        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
+    /**
+     * Aquest metode detecta quan l'usuari prem el boto i gestiona el desplasament de la bola cap a abaix.
+     */
     public void onClickBDown (View view) {
 
         bola = logic.desplasamentBotoDown(bola, bola_index, ScreenHeight, ScreenDensity);
@@ -320,8 +315,8 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
+        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
+        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
 }

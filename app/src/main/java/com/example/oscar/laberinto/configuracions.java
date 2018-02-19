@@ -15,7 +15,7 @@ import java.io.IOException;
  * Pagina que permet modificar algunes caracteristiques de l'aplicació
  */
 public class configuracions extends AppCompatActivity {
-    public static Boolean volum = true;
+    public static Boolean volum = false;
     public static AssetFileDescriptor afd;
     public static MediaPlayer mp;
 
@@ -24,14 +24,35 @@ public class configuracions extends AppCompatActivity {
      * @param savedInstanceState Perform initialization of all fragments and loaders.
      */
     @Override
+    //mostrarem per pantalla a través d'aquest codi, no modificar.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
             AssetFileDescriptor afd = getAssets().openFd("musica.mp3");
-            mp = new MediaPlayer();
-            mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            mp.prepare();
-            setContentView(R.layout.configuracions);
+            if (mp == null) {
+                mp = new MediaPlayer();
+                mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+                mp.prepare();
+                setContentView(R.layout.configuracions);
+                Button button = (Button) findViewById(R.id.buttonEngegat);
+                button.setVisibility(View.INVISIBLE);
+                Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+                buttonApagat.setVisibility(View.VISIBLE);
+            }
+            if(mp != null && !mp.isPlaying()){
+                setContentView(R.layout.configuracions);
+                Button button = (Button) findViewById(R.id.buttonEngegat);
+                button.setVisibility(View.INVISIBLE);
+                Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+                buttonApagat.setVisibility(View.VISIBLE);
+            }
+            else if (mp != null && mp.isPlaying()){
+                setContentView(R.layout.configuracions);
+                Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+                buttonApagat.setVisibility(View.INVISIBLE);
+                Button button = (Button) findViewById(R.id.buttonEngegat);
+                button.setVisibility(View.VISIBLE);
+            }
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -50,7 +71,7 @@ public class configuracions extends AppCompatActivity {
         Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
         buttonApagat.setVisibility(View.VISIBLE);
         volum = false;
-        mp.stop();
+        mp.pause();
     }
 
     /**
@@ -63,7 +84,9 @@ public class configuracions extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.buttonEngegat);
         button.setVisibility(View.VISIBLE);
         volum = true;
-        mp.start();
+        if(!mp.isPlaying()) {
+            mp.start();
+        }
     }
 
     /**

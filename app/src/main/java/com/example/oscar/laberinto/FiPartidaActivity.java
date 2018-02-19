@@ -19,10 +19,19 @@ public class FiPartidaActivity extends AppCompatActivity {
     private ImageView estrella2;
     private ImageView estrella3;
 
-    int nivell;
+    /**
+     * Variable que emmagatzema el nivell actual.
+     */
+    private int nivell;
 
-    int estrelles;
+    /**
+     * Variable que conte les estrelles obtingudes per l'usuari.
+     */
+    private int estrelles;
 
+    /**
+     * Metode que mostrara les estrelles que ha obtingut l'usuari per pantalla, aixi com opcions per reiniciar el nivell o tornar al menu de nivells.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,22 +53,31 @@ public class FiPartidaActivity extends AppCompatActivity {
 
     }
 
-    public void reiniciarNivell () {
+    /**
+     * Metode que fa que es reinicii el nivell que ha jugat l'usuari, finalitzant l'activitat actual.
+     */
+    public void onClickReiniciarNivell () {
 
         Intent intent = new Intent (FiPartidaActivity.this, Partida2Activity.class);
         intent.putExtra("nivell", nivell);
         startActivity(intent);
-        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
+        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir a la pregunta.
     }
 
-    public void tornarAlMenu(){
+    /**
+     * Metode que redirecciona al menu de nivells, finalitzant l'activitat actual.
+     */
+    public void onClickTornarAlMenu(){
 
-        Intent intent = new Intent (FiPartidaActivity.this, menu.class);
+        Intent intent = new Intent (FiPartidaActivity.this, Nivells2Activity.class);
         startActivity(intent);
-        finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir al AlertDialog.
+        finish();
     }
 
-
+    /**
+     * Metode que mostra per pantalla les estrelles obtingudes, de color groc, per l'usuari segons el nombre d'estrelles que rep com a parametre.
+     * @param estrelles: parametre entre 0 i 3 segons el qual es mostrara per pantalla aquest nombre d'estrelles iluminades.
+     */
     private void mostraEstrelles(int estrelles) {
 
         switch(estrelles) {

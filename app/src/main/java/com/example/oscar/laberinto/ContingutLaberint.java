@@ -6,6 +6,11 @@ package com.example.oscar.laberinto;
 
 public class ContingutLaberint {
 
+    /**
+     * Metode que omple la matriu que representa el laberint del nivell 1.
+     * @return: retorna la matriu "taulell", la qual representa el laberint. Aquesta matriu conte 4 booleans per casella.
+     * Segons el valor de la tercera component voldra dir: 0- Anar cap a la dreta, 1- Anar cap a abaix, 2- Anar cap a l'esquerra i 3- Anar cap a dalt.
+     */
     public static boolean[][][] laberint1() {
 
         boolean [][][] taulell = new boolean[58][58][4]; //La 3a component si val: 0-anar cap a la dreta, 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
@@ -198,6 +203,11 @@ public class ContingutLaberint {
         return taulell;
     }
 
+    /**
+     * Metode que omple la matriu que representa el laberint del nivell 2.
+     * @return: retorna la matriu "taulell", la qual representa el laberint. Aquesta matriu conte 4 booleans per casella.
+     * Segons el valor de la tercera component voldra dir: 0- Anar cap a la dreta, 1- Anar cap a abaix, 2- Anar cap a l'esquerra i 3- Anar cap a dalt.
+     */
     public static boolean[][][] laberint2() {
 
         boolean [][][] taulell = new boolean[58][58][4]; //La 3a component si val: 0-anar cap a la dreta, 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
@@ -451,6 +461,11 @@ public class ContingutLaberint {
         return taulell;
     }
 
+    /**
+     * Metode que omple la matriu que representa el laberint del nivell 3.
+     * @return: retorna la matriu "taulell", la qual representa el laberint. Aquesta matriu conte 4 booleans per casella.
+     * Segons el valor de la tercera component voldra dir: 0- Anar cap a la dreta, 1- Anar cap a abaix, 2- Anar cap a l'esquerra i 3- Anar cap a dalt.
+     */
     public static boolean[][][] laberint3() {
 
         boolean [][][] taulell = new boolean[58][58][4];
@@ -759,6 +774,11 @@ public class ContingutLaberint {
         return taulell;
     }
 
+    /**
+     * Metode que omple la matriu que representa el laberint del nivell 4.
+     * @return: retorna la matriu "taulell", la qual representa el laberint. Aquesta matriu conte 4 booleans per casella.
+     * Segons el valor de la tercera component voldra dir: 0- Anar cap a la dreta, 1- Anar cap a abaix, 2- Anar cap a l'esquerra i 3- Anar cap a dalt.
+     */
     public static boolean[][][] laberint4() {
 
         boolean[][][] taulell = new boolean[58][58][4];
