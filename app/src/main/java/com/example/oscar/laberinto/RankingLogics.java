@@ -7,6 +7,9 @@ import java.util.Iterator;
  * Created by oscar on 14/02/2018.
  */
 
+/**
+ * Gestiona rankingView.
+ */
 public class RankingLogics {
 
     private ArrayList<Usuari> array; //refactor failed so dont change name...
@@ -25,10 +28,19 @@ public class RankingLogics {
         return usuariActual;
     }
 
+    /**
+     * Hauria de retornar els usuaris al fitxer intern
+     * @return: l'array amb els usuaris d'altres partides.
+     */
     public ArrayList<Usuari> addCurrentUsers(){
+        //TODO
         return this.array;
     }
 
+    /**
+     *  Converteix l'array d'usuari a format string, per a ser pintat.
+     * @return l'array en format string
+     */
     public ArrayList<String> getArrayByOrder() {
         ArrayList<String> strings = new ArrayList<String>();
 
@@ -45,6 +57,11 @@ public class RankingLogics {
         return strings;
     }
 
+    /**
+     *  Busca si el nom d'usuari ja esta a les dades.
+     * @param nom nom a buscar
+     * @return si el nom esta repetit o no
+     */
     public boolean buscarNomRepetit(String nom){
         for (Usuari usuari:array) {
             if (usuari.getNom() == nom){
@@ -54,6 +71,11 @@ public class RankingLogics {
         return false; //esta repetit
     }
 
+    /**
+     * Si l'usuari s'ha trobat a la base de dades, el retornarem.
+     * @param nom nom a buscar
+     * @return l'usuari trobat a la base de dades
+     */
     public Usuari buscarUsuariRepetit(String nom){
         for (Usuari usuari:array) {
             if (usuari.getNom() == nom){
@@ -65,6 +87,10 @@ public class RankingLogics {
     }
 
 
+    /**
+     * Buscarem si el nom esta actualment a les dades, sino l'afegirem.
+     * @param nom nom que volem atribuir
+     */
     public void cambiarNom(String nom){
 
         if(buscarNomRepetit(nom)){
@@ -73,10 +99,6 @@ public class RankingLogics {
         else{
             usuariActual.setNom(nom);
         }
-    }
-
-    public void setArray(ArrayList<Usuari> array) {
-        this.array = array;
     }
 
 

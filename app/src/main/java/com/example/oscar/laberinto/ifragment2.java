@@ -10,6 +10,9 @@ import android.view.ViewGroup;
  * Created by oscar on 11/02/2018.
  */
 
+/**
+ * segon fragment referent a com jugar.
+ */
 public class ifragment2 extends android.support.v4.app.Fragment{
     private static final String TAG = "Com Jugar";
 

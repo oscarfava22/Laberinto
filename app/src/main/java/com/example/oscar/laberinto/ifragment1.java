@@ -10,6 +10,9 @@ import android.view.ViewGroup;
  * Created by oscar on 11/02/2018.
  */
 
+/**
+ * Primer fragment referent als moviments.
+ */
 public class ifragment1 extends android.support.v4.app.Fragment{
     private static final String TAG = "Moviments";
 

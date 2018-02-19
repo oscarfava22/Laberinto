@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
  * Created by oscar on 13/02/2018.
  */
 
+/**
+ * Defineix l'usuari de la partida
+ */
 public class Usuari implements Comparable<Usuari>{
 
     private String nom;
@@ -51,6 +54,11 @@ public class Usuari implements Comparable<Usuari>{
         return puntuacio;
     }
 
+    /**
+     * S'encarrega de permetre el sort de l'arrayList.
+     * @param usuari: rep un usuari a comparar
+     * @return : la comparacio
+     */
     @Override
     public int compareTo(@NonNull Usuari usuari) {
         int comparingOne = this.getPuntuacioTotal();

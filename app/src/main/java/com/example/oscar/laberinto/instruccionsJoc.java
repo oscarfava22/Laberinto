@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.MenuItem;
 
 
+/**
+ * Gestiona les instruccions del joc que mostren la informacio de com jugar.
+ */
 public class instruccionsJoc extends AppCompatActivity {
 
     private static final String TAG = "instruccionsJoc";
@@ -17,6 +20,10 @@ public class instruccionsJoc extends AppCompatActivity {
 
     private  ViewPager mViewpager;
 
+    /**
+     * A l'iniciar l'activity, crea el context visual de la pantalla 'instruccions'. Ens col·loca la ViewPager i inicialitzar l'adapter.
+     * @param savedInstanceState Perform initialization of all fragments and loaders.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,6 +41,10 @@ public class instruccionsJoc extends AppCompatActivity {
 
     }
 
+    /**
+     * Ens afegeix a la activity que conté l'estructura de "tabs" cada fragment.
+     * @param viewPager Layout que ens permet anar fent "flip" d'esquerra a dreta pels fragments.
+     */
     private void setupViewPager(ViewPager viewPager){
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new ifragment1(),"Moviments");

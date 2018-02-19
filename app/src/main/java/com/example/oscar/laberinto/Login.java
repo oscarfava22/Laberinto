@@ -17,6 +17,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
+/**
+ * Pantalla que permet a l'usuari establir el seu nom.
+ */
 public class Login extends AppCompatActivity  {
 
     private JsonManager jsonManager;
@@ -24,13 +27,22 @@ public class Login extends AppCompatActivity  {
     private FileOutputStream fos;
     private FileInputStream fis;
 
+    /**
+     * A l'iniciar l'activity, crea el context visual de la pantalla 'menu'.
+     * @param savedInstanceState Perform initialization of all fragments and loaders.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        carregaFitxer();
+        //carregaFitxer();
+        getSupportActionBar().setTitle("Iniciar sessió");
     }
 
+    /**
+     * Quan prem l'usuari, cambia el nom i anem al menu. Si no escrius res, es motra l'error.
+     * @param view boto pulsat
+     */
     public void onClickButtonLogin (View view){
 
         AutoCompleteTextView editText = (AutoCompleteTextView) findViewById(R.id.user);
@@ -47,6 +59,9 @@ public class Login extends AppCompatActivity  {
 
     }
 
+    /**
+     * hauria de carregar el fitxer intern
+     */
     public void carregaFitxer(){
         /**
         try {

@@ -11,17 +11,11 @@ public class JsonManager {
         try {
             Gson gson = new Gson();
 
-            String json = "{\"videos\":";
+            String json = "{\"Usuaris\":";
 
-            json += gson.toJson(DadesPreferits.videos_aux);
+            json += gson.toJson(menu.ranking.array);
 
-            json += ",\"channels\":";
-
-            json += gson.toJson(DadesPreferits.channels_aux);
-
-            json += ",\"playlists\":";
-
-            json += gson.toJson(DadesPreferits.playLists_aux);
+            json += gson.toJson(menu.ranking.usuariActual);
 
             json += "}";
         }catch ()
@@ -30,32 +24,29 @@ public class JsonManager {
 
     public static void llegirFitxer(){
 
-        JsonParser parser = new JsonParser(); // tipus parser per obtenir el format desitjat
+        JsonParser parser = new JsonParser();
         try {
-            //cargo el fitxero amb la classe fileReader, busco en el relative path
-            FileReader fr = newFileReader("jsonFiles/favouriteResults.json");
 
-            JsonElement jsonElement = parser.parse(fr); //per a passar a format json de tipus element usant el "parse"
+            FileReader fr = newFileReader("path.json");
 
-            JsonObject dades = (JsonObject) jsonElement; //vull anar parsejant array a array
+            JsonElement jsonElement = parser.parse(fr);
 
-            Gson gson = new Gson(); // crear gson per tractar automaticament el JsonElement
+            JsonObject dades = (JsonObject) jsonElement;
+            Gson gson = new Gson();
 
-            //agafarem un array auxiliar de videos per carregar tota l'estructura i despres passar un a un el video a l'arrayList
-            DadesPreferits.introduirInfo(gson.fromJson(dades.getAsJsonArray("videos"), Video[].class), 1); // carreguem tota la estructura
-            DadesPreferits.introduirInfo(gson.fromJson(dades.getAsJsonArray("channels"), Channel[].class), 2);
-            DadesPreferits.introduirInfo(gson.fromJson(dades.getAsJsonArray("playlists"), PlayList[].class), 3);
-
+            for(Usuari usuari: array){
+            menu.ranking.array.add(gson.fromJson(dades.getAsJsonArray("Usuaris"), Usuari[].class));
+             }
         }catch(FileNotFoundException e){
 
-            throw new FileNotFoundException("Error al carregar el fitxer de preferits.");
+            throw new FileNotFoundException("Error al carregar el fitxer .");
 
         }catch(JsonSyntaxException e){
 
             System.err.println("Error en la sintaxis de json");
         }catch (ClassCastException e){
 
-            System.err.println("Possiblement, el fitxer no te dades i no podras fer un cast de cap element");
+            System.err.println("Possiblement, el fitxer no te dades");
         }
     }
          **/

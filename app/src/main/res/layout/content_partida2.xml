@@ -117,9 +117,11 @@
         android:id="@+id/bola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bolaf"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="178dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bolaf" />
 
     <ImageButton
         android:id="@+id/imageButton10"
@@ -169,10 +171,12 @@
 
     <Chronometer
         android:id="@+id/chronometer2"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        android:layout_marginStart="60dp"
+        android:layout_width="40dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -180,10 +184,24 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:text="Temps:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="58dp"
+        android:text="minuts"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
+        app:layout_constraintStart_toEndOf="@+id/chronometer2"
         app:layout_constraintTop_toTopOf="parent" />
 
 

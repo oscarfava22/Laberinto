@@ -11,13 +11,19 @@ import android.widget.Button;
 import java.io.IOException;
 
 
-// opciones: modificar so, idioma i nom_usuari
-public class configuracions extends AppCompatActivity { //classe principal
-    public static Boolean volum = true; //inicialment esta engegat
+/**
+ * Pagina que permet modificar algunes caracteristiques de l'aplicació
+ */
+public class configuracions extends AppCompatActivity {
+    public static Boolean volum = true;
     public static AssetFileDescriptor afd;
     public static MediaPlayer mp;
+
+    /**
+     * A l'iniciar l'activity, crea el context visual de la pantalla 'configuracions'. Inicialitza la musica i permet anar enrere.
+     * @param savedInstanceState Perform initialization of all fragments and loaders.
+     */
     @Override
-    //mostrarem per pantalla a través d'aquest codi, no modificar.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
@@ -33,28 +39,40 @@ public class configuracions extends AppCompatActivity { //classe principal
             e.getMessage();
         }
     }
-        public void onClickButton(View view) {
-            Button button = (Button) findViewById(R.id.buttonEngegat);
-            button.setVisibility(View.INVISIBLE);
-            Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
-            buttonApagat.setVisibility(View.VISIBLE);
-            volum = false;
-            mp.stop();
-        }
 
-        public void onClickButtonApagat(View view) {
-            Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
-            buttonApagat.setVisibility(View.INVISIBLE);
-            Button button = (Button) findViewById(R.id.buttonEngegat);
-            button.setVisibility(View.VISIBLE);
-            volum = true;
-            mp.start();
-        }
+    /**
+     * Ens apaga la musica i canvia el boto a mostrar.
+     * @param view boto pulsat
+     */
+    public void onClickButton(View view) {
+        Button button = (Button) findViewById(R.id.buttonEngegat);
+        button.setVisibility(View.INVISIBLE);
+        Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+        buttonApagat.setVisibility(View.VISIBLE);
+        volum = false;
+        mp.stop();
+    }
 
-        public void onClickButtonTwo(View view){
+    /**
+     * Ens apaga la musica i canvia el boto a mostrar.
+     * @param view boto pulsat
+     */
+    public void onClickButtonApagat(View view) {
+        Button buttonApagat = (Button) findViewById(R.id.buttonApagat);
+        buttonApagat.setVisibility(View.INVISIBLE);
+        Button button = (Button) findViewById(R.id.buttonEngegat);
+        button.setVisibility(View.VISIBLE);
+        volum = true;
+        mp.start();
+    }
 
-                Intent canviNom = new Intent(this, CanviNom.class);
-                startActivity(canviNom);
+    /**
+     * Dirigeix a l'activity per canviar nom.
+     * @param view boto pulsat
+     */
+    public void onClickButtonTwo(View view){
+        Intent canviNom = new Intent(this, CanviNom.class);
+        startActivity(canviNom);
         }
 
 }

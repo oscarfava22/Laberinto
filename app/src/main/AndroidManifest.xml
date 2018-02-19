@@ -61,7 +61,7 @@
 
         <activity
             android:name="com.example.oscar.laberinto.Login"
-            android:label="Iniciar la sessio">
+            android:label="LABERINT">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

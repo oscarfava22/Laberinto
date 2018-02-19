@@ -41,7 +41,7 @@ public class Logica {
                 break;
 
             case 4:
-
+                taulell = ContingutLaberint.laberint4();
                 break;
         }
 
@@ -143,7 +143,7 @@ public class Logica {
 
     public ImageView desplasamentBotoRight(ImageView bola, int[] bola_index, int ScreenWidth, int ScreenDensity) {
 
-        if (bola_index[1] < 57 && taulell[bola_index[0]][bola_index[1]][0]) { //&& taulell[bola_index[0]][bola_index[1]][0]
+        if (bola_index[1] < 57 && taulell[bola_index[0]][bola_index[1]][0]) {
 
             bola.setX(bola.getX() + (10 * (float)ScreenDensity / 480));
             bola_index[1] ++;
@@ -153,7 +153,7 @@ public class Logica {
 
     public ImageView desplasamentBotoLeft (ImageView bola, int[] bola_index, int ScreenDensity){
 
-        if (bola_index[1] > 0 && taulell[bola_index[0]][bola_index[1]][2]) { //&& taulell[bola_index[0]][bola_index[1]][2]
+        if (bola_index[1] > 0 && taulell[bola_index[0]][bola_index[1]][2]) {
 
             bola.setX(bola.getX() - (10 * (float)ScreenDensity / 480));
             bola_index[1] --;
@@ -164,7 +164,7 @@ public class Logica {
 
     public ImageView desplasamentBotoUp(ImageView bola, int[] bola_index, int ScreenDensity) {
 
-        if (bola_index[0] > 0 && taulell[bola_index[0]][bola_index[1]][3]) { // && taulell[bola_index[0]][bola_index[1]][3]
+        if (bola_index[0] > 0 && taulell[bola_index[0]][bola_index[1]][3]) {
 
             bola.setY(bola.getY() - (10 * (float)ScreenDensity / 480));
             bola_index[0] --;
@@ -174,7 +174,7 @@ public class Logica {
 
     public ImageView desplasamentBotoDown(ImageView bola, int[] bola_index, int screenHeight, int screenDensity) {
 
-        if (bola_index[0] < 57 && taulell[bola_index[0]][bola_index[1]][1]) { //&& taulell[bola_index[0]][bola_index[1]][1]
+        if (bola_index[0] < 57 && taulell[bola_index[0]][bola_index[1]][1]) {
 
             bola.setY(bola.getY() + (10 * (float)screenDensity / 480));
             bola_index[0] ++;
