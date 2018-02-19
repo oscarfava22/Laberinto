@@ -10,7 +10,7 @@ package com.example.oscar.laberinto;
 public class Puntuacions {
     private int [][] puntuacions; //nivellsestrella i temps per cada estrella
     public static final int nivells = 8;
-    private final int tempsInicial = 60; //x segons
+    private final int tempsInicial = 215; //x segons
 
     public Puntuacions(){
         puntuacions = new int[nivells][3]; //casella 0 = 0 estrelles

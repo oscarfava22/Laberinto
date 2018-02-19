@@ -582,7 +582,7 @@ public class ContingutLaberint {
         taulell[56][29][3] = true;
         taulell[56][29][2] = true;
 
-        for (int i = 29; i < 15; i--) {
+        for (int i = 29; i > 15; i--) {
             taulell[55][i][2] = true;
             taulell[55][i][0] = true;
             taulell[55][i][1] = true;
@@ -592,7 +592,7 @@ public class ContingutLaberint {
         taulell[55][15][1] = true;
 
 
-        for (int i = 29; i < 15; i--) {
+        for (int i = 29; i > 15; i--) {
             taulell[56][i][2] = true;
             taulell[56][i][0] = true;
             taulell[56][i][3] = true;
@@ -650,7 +650,7 @@ public class ContingutLaberint {
         taulell[16][28][2] = false;
 
 
-        for (int i = 16; i < 2; i--) { //41
+        for (int i = 16; i > 2; i--) { //41
             taulell[i][41][1] = true;
             taulell[i][41][3] = true;
             taulell[i][41][0] = true;
@@ -659,7 +659,7 @@ public class ContingutLaberint {
         taulell[2][41][0] = true;
         taulell[16][41][1] = false;
 
-        for (int i = 16; i < 2; i--) { //42
+        for (int i = 16; i > 2; i--) { //42
             taulell[i][42][1] = true;
             taulell[i][42][3] = true;
             taulell[i][42][2] = true;
@@ -705,7 +705,7 @@ public class ContingutLaberint {
         taulell[2][55][3] = false;
 
 
-        for (int i = 55; i < 41; i--) { //42
+        for (int i = 55; i > 41; i--) { //42
             taulell[42][i][0] = true;
             taulell[42][i][2] = true;
             taulell[42][i][1] = true;
@@ -714,7 +714,7 @@ public class ContingutLaberint {
         taulell[41][42][1] = true;
         taulell[55][42][0] = false;
 
-        for (int i = 55; i < 41; i--) { //43
+        for (int i = 55; i > 41; i--) { //43
             taulell[43][i][0] = true;
             taulell[43][i][2] = true;
             taulell[43][i][3] = true;
@@ -761,13 +761,35 @@ public class ContingutLaberint {
         //inicio/final
 
         //bug
-        for (int i = 15; i < 2; i--) {
+        for (int i = 15; i > 2; i--) {
             taulell[i][42][1] = true;
             taulell[i][42][3] = true;
 
         }
         taulell[15][42][0] = false;
         taulell[2][41][3] = false;
+        taulell[55][29][0] = false;
+        taulell[29][28][3] = false;
+        taulell[29][29][3] = false;
+        taulell[29][15][2] = false;
+        taulell[2][29][1] = true;
+        taulell[14][42][0] = false;
+        taulell[13][42][0] = false;
+        taulell[12][42][0] = false;
+        taulell[11][42][0] = false;
+        taulell[10][42][0] = false;
+        taulell[9][42][0] = false;
+        taulell[8][42][0] = false;
+        taulell[7][42][0] = false;
+        taulell[6][42][0] = false;
+        taulell[5][42][0] = false;
+        taulell[4][42][0] = false;
+        taulell[8][41][2] = false;
+        taulell[7][41][2] = false;
+        taulell[6][41][2] = false;
+        taulell[5][41][2] = false;
+        taulell[4][41][2] = false;
+        taulell[43][55][0] = false;
 
 
 
@@ -828,7 +850,7 @@ public class ContingutLaberint {
 
 
 
-        for (int i = 55; i < 29; i--) { //54
+        for (int i = 55; i > 29; i--) { //54
             taulell[i][54][1] = true;
             taulell[i][54][3] = true;
             taulell[i][54][0] = true;
@@ -837,7 +859,7 @@ public class ContingutLaberint {
         taulell[29][54][0] = true;
         taulell[55][54][1] = false;
 
-        for (int i = 55; i < 29; i--) { //55
+        for (int i = 55; i > 29; i--) { //55
             taulell[i][55][1] = true;
             taulell[i][55][3] = true;
             taulell[i][55][0] = true;
@@ -845,9 +867,10 @@ public class ContingutLaberint {
         taulell[29][55][1] = true;
         taulell[29][55][0] = true;
         taulell[55][55][1] = false;
+        taulell[55][55][0] = false;
 
 
-        for (int i = 55; i < 28; i--) { //29
+        for (int i = 55; i > 28; i--) { //29
             taulell[29][i][0] = true;
             taulell[29][i][2] = true;
             taulell[29][i][1] = true;
@@ -856,7 +879,7 @@ public class ContingutLaberint {
         taulell[28][29][1] = true;
         taulell[55][29][0] = false;
 
-        for (int i = 55; i < 28; i--) { //30
+        for (int i = 55; i > 28; i--) { //30
             taulell[30][i][0] = true;
             taulell[30][i][2] = true;
             taulell[30][i][3] = true;
@@ -866,7 +889,7 @@ public class ContingutLaberint {
         taulell[55][30][0] = false;
 
 
-        for (int i = 30; i < 16; i--) { //28
+        for (int i = 30; i > 16; i--) { //28
             taulell[i][28][3] = true;
             taulell[i][28][1] = true;
             taulell[i][28][0] = true;
@@ -875,7 +898,7 @@ public class ContingutLaberint {
         taulell[16][28][0] = true;
         taulell[30][28][1] = false;
 
-        for (int i = 30; i < 16; i--) { //29
+        for (int i = 30; i > 16; i--) { //29
             taulell[i][29][3] = true;
             taulell[i][29][1] = true;
             taulell[i][29][2] = true;
@@ -894,7 +917,7 @@ public class ContingutLaberint {
 
 
 
-         for (int i = 54; i < 15; i--) { //fila 42
+         for (int i = 54; i > 15; i--) { //fila 42
             taulell[42][i][0] = true;
              taulell[42][i][2] = true;
              taulell[42][i][1] = true;
@@ -903,7 +926,7 @@ public class ContingutLaberint {
          taulell[15][42][1] = true;
          taulell[54][42][0] = false;
 
-        for (int i = 54; i < 15; i--) { //fila 43
+        for (int i = 54; i > 15; i--) { //fila 43
             taulell[43][i][0] = true;
             taulell[43][i][2] = true;
             taulell[43][i][3] = true;
@@ -912,7 +935,7 @@ public class ContingutLaberint {
         taulell[15][43][3] = true;
         taulell[54][43][0] = false;
 
-        for (int i = 43; i < 3; i--) { //c 15
+        for (int i = 43; i > 3; i--) { //c 15
             taulell[i][15][1] = true;
             taulell[i][15][3] = true;
             taulell[i][15][0] = true;
@@ -920,7 +943,7 @@ public class ContingutLaberint {
         taulell[3][15][1] = true;
         taulell[43][15][1] = false;
 
-        for (int i = 43; i < 3; i--) { //c 16
+        for (int i = 43; i > 3; i--) { //c 16
             taulell[i][16][3] = true;
             taulell[i][16][1] = true;
             taulell[i][16][2] = true;
@@ -961,6 +984,14 @@ public class ContingutLaberint {
         taulell[3][55][2] = true;
         taulell[3][55][1] = true;
         taulell[3][55][3] = true;
+
+        //La 3a component si val: 0-anar cap a la dreta,
+        // 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
+        //bugs
+        taulell[55][30][0] = true;
+        taulell[55][55][3] = true;
+        taulell[55][54][3] = true;
+
         return taulell;
     }
 }

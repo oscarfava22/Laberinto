@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity  {
         setContentView(R.layout.activity_login);
         //carregaFitxer();
         getSupportActionBar().setTitle("Iniciar sessió");
+        
     }
 
     /**
@@ -55,6 +56,7 @@ public class Login extends AppCompatActivity  {
             menu.ranking.cambiarNom(editText.getText().toString());
                 Intent intent = new Intent(this, menu.class);
         startActivity(intent);
+        finish();
         }
 
     }

@@ -68,15 +68,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
-            android:name=".FiPartidaActivity"
+            android:name="com.example.oscar.laberinto.FiPartidaActivity"
             android:label="@string/title_activity_fi_partida"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 

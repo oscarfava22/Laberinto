@@ -38,6 +38,7 @@ public class FiPartidaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fi_partida);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Resultat de Partida");
 
         nivell = getIntent().getExtras().getInt("nivell");
 
@@ -56,9 +57,9 @@ public class FiPartidaActivity extends AppCompatActivity {
     /**
      * Metode que fa que es reinicii el nivell que ha jugat l'usuari, finalitzant l'activitat actual.
      */
-    public void onClickReiniciarNivell () {
+    public void onClickReiniciarNivell (View view) {
 
-        Intent intent = new Intent (FiPartidaActivity.this, Partida2Activity.class);
+        Intent intent = new Intent (this, Partida2Activity.class);
         intent.putExtra("nivell", nivell);
         startActivity(intent);
         finish(); //Finalitzem activitat actual. No volem que al tirar enrere tornir a la pregunta.
@@ -67,9 +68,9 @@ public class FiPartidaActivity extends AppCompatActivity {
     /**
      * Metode que redirecciona al menu de nivells, finalitzant l'activitat actual.
      */
-    public void onClickTornarAlMenu(){
+    public void onClickTornarAlMenu(View view){
 
-        Intent intent = new Intent (FiPartidaActivity.this, Nivells2Activity.class);
+        Intent intent = new Intent (this, menu.class);
         startActivity(intent);
         finish();
     }
