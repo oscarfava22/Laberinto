@@ -70,7 +70,7 @@ public class FiPartidaActivity extends AppCompatActivity {
      */
     public void onClickTornarAlMenu(View view){
 
-        Intent intent = new Intent (this, menu.class);
+        Intent intent = new Intent (this, Nivells2Activity.class);
         startActivity(intent);
         finish();
     }
