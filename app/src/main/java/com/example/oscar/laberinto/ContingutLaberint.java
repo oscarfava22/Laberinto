@@ -473,7 +473,10 @@ public class ContingutLaberint {
         // 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
         taulell[2][2][0] = true;
         taulell[2][2][1] = true;
-
+        taulell[3][28][1] = true;
+        taulell[3][28][2] = true;
+        taulell[2][29][1] = true;
+        taulell[2][29][2] = true;
         for(int i = 3; i < 29; i++){
             taulell[2][i][0] = true;
             taulell[3][i][0] = true;

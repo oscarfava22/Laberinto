@@ -134,7 +134,7 @@ public class Logica {
 
             case 4:
 
-                //TODO
+                if (bola_index[0] == 0 && (bola_index[1] == 54 || bola_index[1] == 5)) return true;
                 break;
         }
 

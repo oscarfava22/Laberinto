@@ -26,15 +26,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
     private Sensor rotationSensor;
 
     /**
-     * Variables dels textos per mostrar els valors de la fila i columna on es troba la bola.
-     */
-
-
-    private TextView bola_posX;
-
-    private TextView bola_posY;
-
-    /**
      * Variable que representa l'index de la casella a la matriu
      */
     private int bola_index [];
@@ -78,6 +69,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
      * Metode on s'inicialitzen totes les variables mes importants per la deteccio d'interaccions per part de l'usuari.
      * Tambe per la representacio de la imatge.
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -101,6 +93,7 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
         logic = new Logica(ScreenHeight, ScreenWidth, nivell);
 
 /*
+        //No habilitat donat que interessa poder treballar amb els botons si el sensor no esta disponible. Aquesta seria una altra opcio.
         if (rotationSensor == null){
 
             Toast toast1 = Toast.makeText(getApplicationContext(), "Sensor de rotacion no disponible.", Toast.LENGTH_SHORT);
@@ -116,10 +109,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             startActivity(intent);
         }
 */
-
-        bola_posX = (TextView) findViewById(R.id.pos_x);
-
-        bola_posY = (TextView) findViewById(R.id.pos_y);
 
         bola = (ImageView) findViewById(R.id.bola);
 
@@ -227,8 +216,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
                 gestionarFiPartida();
             }
 
-            bola_posX.setText("fila = " + bola_index[0]); // DEBUGGING
-            bola_posY.setText("columna = " + bola_index[1]); // DEBUGGING
         }
 
     }
@@ -268,8 +255,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
     /**
      * Aquest metode detecta quan l'usuari prem el boto i gestiona el desplasament de la bola cap a la esquerra.
@@ -283,8 +268,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
     /**
@@ -299,8 +282,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
     /**
@@ -315,8 +296,6 @@ public class Partida2Activity extends AppCompatActivity implements SensorEventLi
             gestionarFiPartida();
         }
 
-        bola_posX.setText("Fila = " + bola_index[0]); // DEBUGGING
-        bola_posY.setText("Columna = " + bola_index[1]); // DEBUGGING
     }
 
 }
