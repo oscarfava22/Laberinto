@@ -478,6 +478,8 @@ public class ContingutLaberint {
             taulell[2][i][0] = true;
             taulell[3][i][0] = true;
             taulell[2][i][2] = true;
+            taulell[3][i][3] = true;
+            taulell[2][i][1] = true;
             taulell[3][i][2] = true;
         }
 
@@ -551,7 +553,7 @@ public class ContingutLaberint {
         for (int i = 15; i < 29; i++) {
             taulell[30][i][1] = true;
             taulell[30][i][2] = true;
-            taulell[29][i][0] = true;
+            taulell[30][i][0] = true;
         }
         taulell[30][30][1] = true;
         taulell[30][30][2] = true;
@@ -572,6 +574,13 @@ public class ContingutLaberint {
         }
         taulell[56][28][0] = true;
         taulell[56][28][3] = true;
+
+        for (int i = 3; i < 16; i++) {
+            taulell[42][i][0] = true;
+            taulell[42][i][2] = true;
+
+        }
+        taulell[42][16][2] = true;
 
         for (int i = 29; i < 56; i++) {
             taulell[i][29][1] = true;
@@ -704,6 +713,13 @@ public class ContingutLaberint {
         taulell[43][55][2] = true;
         taulell[2][55][3] = false;
 
+        for (int i = 15; i > 3; i--) {
+            taulell[15][i][0] = true;
+            taulell[15][i][2] = true;
+            taulell[15][i][1] = true;
+
+        }
+
 
         for (int i = 55; i > 41; i--) { //42
             taulell[42][i][0] = true;
@@ -731,6 +747,12 @@ public class ContingutLaberint {
         taulell[56][41][3] = true;
         taulell[56][41][0] = true;
         taulell[29][41][3] = false;
+        taulell[9][41][2] = false;
+        taulell[10][41][2] = false;
+        taulell[11][41][2] = false;
+        taulell[12][41][2] = false;
+        taulell[13][41][2] = false;
+        taulell[14][41][2] = false;
 
         for (int i = 29; i < 56; i++) { //42
             taulell[i][42][3] = true;
@@ -740,7 +762,9 @@ public class ContingutLaberint {
         taulell[56][42][3] = true;
         taulell[56][42][2] = true;
         taulell[29][42][3] = false;
-
+        taulell[53][41][2] = false;
+        taulell[54][41][2] = false;
+        taulell[55][41][2] = false;
 
         for (int i = 41; i < 58; i++) { //55
             taulell[55][i][2] = true;
@@ -790,7 +814,37 @@ public class ContingutLaberint {
         taulell[5][41][2] = false;
         taulell[4][41][2] = false;
         taulell[43][55][0] = false;
+        for (int i = 28; i > 15; i--) {
+            taulell[30][i][0] = true;
+            taulell[30][i][2] = true;
+            taulell[30][i][3] = true;
 
+        }
+        taulell[29][29][2] = true;
+        taulell[29][29][1] = false;
+        taulell[30][16][1] = false;
+        taulell[30][15][1] = false;
+        taulell[30][14][1] = false;
+        taulell[30][17][1] = false;
+        taulell[30][18][1] = false;
+        taulell[30][19][1] = false;
+        taulell[30][20][1] = false;
+        taulell[30][21][1] = false;
+        taulell[30][22][1] = false;
+        taulell[30][23][1] = false;
+        taulell[30][24][1] = false;
+        taulell[30][25][1] = false;
+        taulell[30][26][1] = false;
+        taulell[30][27][1] = false;
+        //La 3a component si val: 0-anar cap a la dreta,
+        // 1-anar cap a abaix, 2-anar cap a esquerra, 3-anar cap a dalt
+        taulell[56][29][0] = false;
+        taulell[29][29][0] = false;
+        taulell[29][28][0] = false;
+        taulell[30][15][2] = false;
+
+        taulell[55][41][2] = false;
+        taulell[56][41][2] = false;
 
 
         return taulell;
@@ -862,10 +916,10 @@ public class ContingutLaberint {
         for (int i = 55; i > 29; i--) { //55
             taulell[i][55][1] = true;
             taulell[i][55][3] = true;
-            taulell[i][55][0] = true;
+            taulell[i][55][2] = true;
         }
         taulell[29][55][1] = true;
-        taulell[29][55][0] = true;
+        taulell[29][55][2] = true;
         taulell[55][55][1] = false;
         taulell[55][55][0] = false;
 
@@ -991,6 +1045,8 @@ public class ContingutLaberint {
         taulell[55][30][0] = true;
         taulell[55][55][3] = true;
         taulell[55][54][3] = true;
+        taulell[29][55][0] = false;
+        taulell[30][55][0] = false;
 
         return taulell;
     }
